@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1006,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "FoodHut.MVC\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAAAO4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T15:17:36.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "FoodHut.MVC\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAACgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T15:14:54.778Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
