@@ -18,7 +18,36 @@ public class AppDbContext : IdentityDbContext<IdentityUser,IdentityRole,string>
     protected override void OnModelCreating(ModelBuilder builder)
     {
 
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());   
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+        #region Roles
+        builder.Entity<IdentityRole>().HasData(
+            new IdentityRole { Id = "e6eb5f0a-6258-48e9-8fce-cc2572049bf6", Name = "Admin", NormalizedName = "ADMIN"},
+            new IdentityRole { Id = "8cf89746-f001-4af7-92dc-4e71a02a42f9", Name = "User", NormalizedName = "USER" }
+        );
+        #endregion
+
+
+        #region User
+        IdentityUser admin = new()
+        {
+            Id = "abc63b97-f14a-4601-8dc6-9d0583e118cf",
+            UserName = "admin",
+            NormalizedUserName = "ADMIN"
+        };
+
+        PasswordHasher<IdentityUser> hasher = new();
+        admin.PasswordHash = hasher.HashPassword(admin, "admin123");
+
+
+        builder.Entity<IdentityUser>().HasData(admin);
+
+
+        builder.Entity<IdentityUserRole<string>>().HasData(
+            new IdentityUserRole<string> { UserId = admin.Id, RoleId = "e6eb5f0a-6258-48e9-8fce-cc2572049bf6" }
+        );
+        #endregion
+
         base.OnModelCreating(builder);
     }
 }

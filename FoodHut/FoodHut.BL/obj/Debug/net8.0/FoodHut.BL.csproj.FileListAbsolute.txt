@@ -28,3 +28,4 @@ C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.BL\obj\Debug\net8.
 C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.BL\obj\Debug\net8.0\refint\FoodHut.BL.dll
 C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.BL\obj\Debug\net8.0\FoodHut.BL.pdb
 C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.BL\obj\Debug\net8.0\ref\FoodHut.BL.dll
+C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.BL\obj\Debug\net8.0\FoodHut.BL.sourcelink.json

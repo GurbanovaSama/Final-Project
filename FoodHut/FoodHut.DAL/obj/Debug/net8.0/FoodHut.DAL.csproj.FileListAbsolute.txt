@@ -26,3 +26,4 @@ C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.DAL\obj\Debug\net8
 C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.DAL\obj\Debug\net8.0\FoodHut.DAL.pdb
 C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.DAL\obj\Debug\net8.0\FoodHut.DAL.genruntimeconfig.cache
 C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.DAL\obj\Debug\net8.0\ref\FoodHut.DAL.dll
+C:\Users\Sema Gurbanova\Desktop\Final-Project\FoodHut\FoodHut.DAL\obj\Debug\net8.0\FoodHut.DAL.sourcelink.json

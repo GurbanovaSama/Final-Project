@@ -41,10 +41,15 @@ namespace FoodHut.DAL.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RestaurantId");
 
                     b.ToTable("Categories");
                 });
@@ -374,6 +379,17 @@ namespace FoodHut.DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("FoodHut.DAL.Models.Category", b =>
+                {
+                    b.HasOne("FoodHut.DAL.Models.Restaurant", "Restaurant")
+                        .WithMany("Categories")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+                });
+
             modelBuilder.Entity("FoodHut.DAL.Models.Product", b =>
                 {
                     b.HasOne("FoodHut.DAL.Models.Category", "Category")
@@ -467,6 +483,8 @@ namespace FoodHut.DAL.Migrations
 
             modelBuilder.Entity("FoodHut.DAL.Models.Restaurant", b =>
                 {
+                    b.Navigation("Categories");
+
                     b.Navigation("Products");
                 });
 #pragma warning restore 612, 618

@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FoodHut.DAL.Models;
+using FoodHut.DAL.Repository.Abstractions;
+using FoodHut.DAL.Repository.Implementations;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FoodHut.DAL
 {
-    internal class ConfigurationServices
+    public static class ConfigurationServices
     {
+        public static void AddDALServies(this IServiceCollection services)
+        {
+            services.AddScoped<IRepository<Category>, Repository<Category>>();
+            services.AddScoped<IRepository<Product>, Repository<Product>>();
+            services.AddScoped<IRepository<Restaurant>, Repository<Restaurant>>();
+            services.AddScoped<IRepository<Review>, Repository<Review>>();
+        }
     }
 }
