@@ -2,6 +2,7 @@ using FoodHut.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 using FoodHut.DAL;
 using Microsoft.AspNetCore.Identity;
+using FoodHut.BL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +36,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 
-builder.Services.AddDALServies();
+builder.Services.AddDALService();
+builder.Services.AddBLService();
 
 
 var app = builder.Build();

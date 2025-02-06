@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodHut.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a819df611ac88f03b8a549ff19e8704ddb5c1b08")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a28f56400e5c86e55b34958a70201ab6f655e22")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodHut.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodHut.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,7 +7,7 @@ namespace FoodHut.DAL
 {
     public static class ConfigurationServices
     {
-        public static void AddDALServies(this IServiceCollection services)
+        public static void AddDALService(this IServiceCollection services)
         {
             services.AddScoped<IRepository<Category>, Repository<Category>>();
             services.AddScoped<IRepository<Product>, Repository<Product>>();

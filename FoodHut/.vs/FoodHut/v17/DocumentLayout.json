@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.dal\\configurations\\restaurantconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|solutionrelative:foodhut.dal\\configurations\\restaurantconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.dal\\configurations\\productconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|solutionrelative:foodhut.dal\\configurations\\productconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.dal\\configurations\\categoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|solutionrelative:foodhut.dal\\configurations\\categoryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.dal\\contexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|solutionrelative:foodhut.dal\\contexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8E0C97B3-66A7-4238-8FB1-5D65564F5DD1}|FoodHut.BL\\FoodHut.BL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.bl\\configurationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E0C97B3-66A7-4238-8FB1-5D65564F5DD1}|FoodHut.BL\\FoodHut.BL.csproj|solutionrelative:foodhut.bl\\configurationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.dal\\configurationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|solutionrelative:foodhut.dal\\configurationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.dal\\repository\\implementations\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|solutionrelative:foodhut.dal\\repository\\implementations\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.dal\\repository\\abstractions\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAA75D69-CA23-46BF-90F5-16A4A6A01AB8}|FoodHut.DAL\\FoodHut.DAL.csproj|solutionrelative:foodhut.dal\\repository\\abstractions\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1006,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,106 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RestaurantConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Configurations\\RestaurantConfiguration.cs",
-              "RelativeDocumentMoniker": "FoodHut.DAL\\Configurations\\RestaurantConfiguration.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Configurations\\RestaurantConfiguration.cs",
-              "RelativeToolTip": "FoodHut.DAL\\Configurations\\RestaurantConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:09:50.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Configurations\\ProductConfiguration.cs",
-              "RelativeDocumentMoniker": "FoodHut.DAL\\Configurations\\ProductConfiguration.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Configurations\\ProductConfiguration.cs",
-              "RelativeToolTip": "FoodHut.DAL\\Configurations\\ProductConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:09:49.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CategoryConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Configurations\\CategoryConfiguration.cs",
-              "RelativeDocumentMoniker": "FoodHut.DAL\\Configurations\\CategoryConfiguration.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Configurations\\CategoryConfiguration.cs",
-              "RelativeToolTip": "FoodHut.DAL\\Configurations\\CategoryConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:09:48.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Contexts\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "FoodHut.DAL\\Contexts\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Contexts\\AppDbContext.cs",
-              "RelativeToolTip": "FoodHut.DAL\\Contexts\\AppDbContext.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:54:53.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Program.cs",
-              "RelativeDocumentMoniker": "FoodHut.MVC\\Program.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Program.cs",
-              "RelativeToolTip": "FoodHut.MVC\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:52:17.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ConfigurationServices.cs",
               "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\ConfigurationServices.cs",
               "RelativeDocumentMoniker": "FoodHut.DAL\\ConfigurationServices.cs",
               "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\ConfigurationServices.cs",
               "RelativeToolTip": "FoodHut.DAL\\ConfigurationServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:46:20.987Z",
+              "WhenOpened": "2025-02-06T19:29:10.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Repository\\Implementations\\Repository.cs",
-              "RelativeDocumentMoniker": "FoodHut.DAL\\Repository\\Implementations\\Repository.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Repository\\Implementations\\Repository.cs",
-              "RelativeToolTip": "FoodHut.DAL\\Repository\\Implementations\\Repository.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAIwBsAAAANAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Program.cs",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Program.cs",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Program.cs",
+              "RelativeToolTip": "FoodHut.MVC\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:45:41.265Z",
+              "WhenOpened": "2025-02-06T19:28:48.821Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Repository\\Abstractions\\IRepository.cs",
-              "RelativeDocumentMoniker": "FoodHut.DAL\\Repository\\Abstractions\\IRepository.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.DAL\\Repository\\Abstractions\\IRepository.cs",
-              "RelativeToolTip": "FoodHut.DAL\\Repository\\Abstractions\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ConfigurationServices.cs",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.BL\\ConfigurationServices.cs",
+              "RelativeDocumentMoniker": "FoodHut.BL\\ConfigurationServices.cs",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.BL\\ConfigurationServices.cs",
+              "RelativeToolTip": "FoodHut.BL\\ConfigurationServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:45:38.767Z",
+              "WhenOpened": "2025-02-06T19:25:34.747Z",
               "EditorCaption": ""
             }
           ]

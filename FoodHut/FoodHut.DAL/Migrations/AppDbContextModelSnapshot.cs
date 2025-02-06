@@ -117,6 +117,21 @@ namespace FoodHut.DAL.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasMaxLength(120)
@@ -126,6 +141,11 @@ namespace FoodHut.DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -153,10 +173,10 @@ namespace FoodHut.DAL.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
 
-                    b.Property<int>("Rating")
+                    b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -176,9 +196,45 @@ namespace FoodHut.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("RestaurantId");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("FoodHut.DAL.Models.WorkSchedule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<TimeSpan>("CloseTime")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Day")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan>("OpenTime")
+                        .HasColumnType("time");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.ToTable("WorkSchedules");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -206,6 +262,20 @@ namespace FoodHut.DAL.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "e6eb5f0a-6258-48e9-8fce-cc2572049bf6",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "8cf89746-f001-4af7-92dc-4e71a02a42f9",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -296,6 +366,22 @@ namespace FoodHut.DAL.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "abc63b97-f14a-4601-8dc6-9d0583e118cf",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f0017221-9bd8-40cb-9d5b-40b98de1a804",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEA0VqVyOA69S3jLfBOhy60W+UlBeBbxB3KLae98afTbV4wZRZc10GTc9l7ziKbNHg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "3bd7854d-28b5-4efb-be98-b0b69e4cdd52",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -358,6 +444,13 @@ namespace FoodHut.DAL.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "abc63b97-f14a-4601-8dc6-9d0583e118cf",
+                            RoleId = "e6eb5f0a-6258-48e9-8fce-cc2572049bf6"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -411,13 +504,24 @@ namespace FoodHut.DAL.Migrations
 
             modelBuilder.Entity("FoodHut.DAL.Models.Review", b =>
                 {
-                    b.HasOne("FoodHut.DAL.Models.Product", "Product")
+                    b.HasOne("FoodHut.DAL.Models.Restaurant", "Restaurant")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("FoodHut.DAL.Models.WorkSchedule", b =>
+                {
+                    b.HasOne("FoodHut.DAL.Models.Restaurant", "Restaurant")
+                        .WithMany("WorkSchedules")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -476,16 +580,15 @@ namespace FoodHut.DAL.Migrations
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("FoodHut.DAL.Models.Product", b =>
-                {
-                    b.Navigation("Reviews");
-                });
-
             modelBuilder.Entity("FoodHut.DAL.Models.Restaurant", b =>
                 {
                     b.Navigation("Categories");
 
                     b.Navigation("Products");
+
+                    b.Navigation("Reviews");
+
+                    b.Navigation("WorkSchedules");
                 });
 #pragma warning restore 612, 618
         }
