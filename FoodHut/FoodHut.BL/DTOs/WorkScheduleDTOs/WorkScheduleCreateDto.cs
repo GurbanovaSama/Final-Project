@@ -4,7 +4,7 @@ namespace FoodHut.BL.DTOs;
 
 public record WorkScheduleCreateDto
 {
-    [Required]
+    [Required(ErrorMessage = "Restaurant selection is required.")]
     public int RestaurantId { get; set; }
 
     [Required(ErrorMessage = "The day should definitely be celebrated.")]

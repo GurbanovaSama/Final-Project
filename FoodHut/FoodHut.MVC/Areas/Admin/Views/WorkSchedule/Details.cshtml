@@ -1,0 +1,11 @@
+﻿@model WorkScheduleViewItemDto
+
+<h2>Work Schedule Details</h2>
+
+<p><strong>Day:</strong> @Model.Day</p>
+<p><strong>Open Time:</strong> @Model.OpenTime</p>
+<p><strong>Close Time:</strong> @Model.CloseTime</p>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+<a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+<a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>

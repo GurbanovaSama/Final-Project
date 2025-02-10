@@ -11,5 +11,6 @@ public class WorkScheduleProfile : Profile
         CreateMap<WorkScheduleCreateDto, WorkSchedule>().ReverseMap();
         CreateMap<WorkScheduleUpdateDto, WorkSchedule>().ReverseMap();
         CreateMap<WorkScheduleListItemDto, WorkSchedule>().ReverseMap();
+        CreateMap<WorkScheduleViewItemDto, WorkSchedule>().ReverseMap();
     }
 }

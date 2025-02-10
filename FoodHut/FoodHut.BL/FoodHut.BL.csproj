@@ -16,9 +16,4 @@
     <ProjectReference Include="..\FoodHut.DAL\FoodHut.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Abstractions\" />
-    <Folder Include="Services\Implementations\" />
-  </ItemGroup>
-
 </Project>

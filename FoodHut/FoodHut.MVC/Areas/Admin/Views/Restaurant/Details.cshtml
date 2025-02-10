@@ -1,0 +1,19 @@
+﻿@model RestaurantViewItemDto
+
+@{
+    ViewData["Title"] = "Restaurant Details";
+}
+
+<h2 class="mb-4">Restaurant Details</h2>
+
+<div class="card">
+    <img src="~/uploads/restaurants/@Model.ImageUrl" class="card-img-top" alt="@Model.Name">
+    <div class="card-body">
+        <h4>@Model.Name</h4>
+        <p><strong>Location:</strong> @Model.Location</p>
+        <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Description:</strong> @Model.Description</p>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
