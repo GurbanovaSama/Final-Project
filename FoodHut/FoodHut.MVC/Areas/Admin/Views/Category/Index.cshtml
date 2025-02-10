@@ -1,0 +1,31 @@
+﻿@model ICollection<CategoryListItemDto>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>
+                    <a href="@Url.Action("Details", "Category", new { id = category.Id })">Details</a> |
+                    <a href="@Url.Action("Update", "Category", new { id = category.Id })">Update</a> |
+                    <a href="@Url.Action("Delete", "Category", new { id = category.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Category")" class="btn btn-primary">Create New Category</a>

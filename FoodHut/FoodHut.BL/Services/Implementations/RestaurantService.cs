@@ -30,6 +30,12 @@ public class RestaurantService : IRestaurantService
         return _mapper.Map<RestaurantViewItemDto>(restaurant);
     }
 
+    public async Task<RestaurantUpdateDto?> GetUpdateByIdAsync(int id)
+    {
+        Restaurant? restaurant = await _repository.GetByIdAsync(id);
+        return restaurant == null ? null : _mapper.Map<RestaurantUpdateDto>(restaurant);
+    }
+
     public async Task CreateAsync(RestaurantCreateDto createDto)
     {
         Restaurant restaurant = _mapper.Map<Restaurant>(createDto); 

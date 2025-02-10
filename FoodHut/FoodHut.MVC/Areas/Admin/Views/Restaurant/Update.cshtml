@@ -7,8 +7,6 @@
 <h2 class="mb-4">Update Restaurant</h2>
 
 <form asp-action="Update" method="post" enctype="multipart/form-data">
-    <input type="hidden" asp-for="Id" />
-
     <div class="mb-3">
         <label class="form-label">Name</label>
         <input asp-for="Name" class="form-control" required />
@@ -35,15 +33,10 @@
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Current Image</label><br />
-        <img src="~/uploads/restaurants/@Model.ImageUrl" width="200" class="img-thumbnail" />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Upload New Image</label>
+        <label class="form-label">Image</label>
         <input asp-for="Image" class="form-control" type="file" accept="image/*" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit" class="btn btn-warning">Update Restaurant</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

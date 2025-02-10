@@ -1,7 +1,7 @@
-﻿@model RestaurantCreateDto;
+﻿@model RestaurantCreateDto
 
 @{
-    ViewData["Title"] = "Add Restaurant";
+    ViewData["Title"] = "Add New Restaurant";
 }
 
 <h2 class="mb-4">Add New Restaurant</h2>
@@ -38,5 +38,5 @@
     </div>
 
     <button type="submit" class="btn btn-success">Add Restaurant</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    <a asp-controller="Restaurant" asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

@@ -8009,6 +8009,10 @@
       "PackagePath": "staticwebassets\\uploads\\restaurant\\928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp"
     },
     {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurant\\f17187ad-a8b1-471f-b874-56e6a31dba40928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp",
+      "PackagePath": "staticwebassets\\uploads\\restaurant\\f17187ad-a8b1-471f-b874-56e6a31dba40928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FoodHut.MVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

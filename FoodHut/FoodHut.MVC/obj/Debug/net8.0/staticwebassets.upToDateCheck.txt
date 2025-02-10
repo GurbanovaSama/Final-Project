@@ -2000,3 +2000,4 @@ wwwroot\assets\vendors\themify-icons\fonts\themify.ttf
 wwwroot\assets\vendors\themify-icons\fonts\themify.woff
 wwwroot\assets\vendors\wow\wow.js
 wwwroot\uploads\restaurant\928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp
+wwwroot\uploads\restaurant\f17187ad-a8b1-471f-b874-56e6a31dba40928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp

@@ -1,17 +1,18 @@
-﻿@model ICollection<RestaurantListItemDto>;
+﻿@model ICollection<RestaurantListItemDto>
 
 @{
-    ViewData["Title"] = "Restaurants";
+    ViewData["Title"] = "Restaurants List";
 }
 
 <h2 class="mb-4">Restaurants</h2>
 
-<a asp-action="Create" class="btn btn-success mb-3">Add New Restaurant</a>
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Restaurant</a>
 
-<table class="table table-bordered">
-    <thead class="table-dark">
+<table class="table">
+    <thead>
         <tr>
             <th>Name</th>
+            <th>Description</th>
             <th>Location</th>
             <th>Phone</th>
             <th>Email</th>
@@ -23,16 +24,18 @@
         {
             <tr>
                 <td>@restaurant.Name</td>
+                <td>@restaurant.Description</td>
                 <td>@restaurant.Location</td>
                 <td>@restaurant.PhoneNumber</td>
                 <td>@restaurant.Email</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@restaurant.Id" class="btn btn-info btn-sm">View</a>
-                    <a asp-action="Update" asp-route-id="@restaurant.Id" class="btn btn-warning btn-sm">Update</a>
-                    <a asp-action="Delete" asp-route-id="@restaurant.Id" class="btn btn-danger btn-sm">Delete</a>
+                    <a asp-action="Details" asp-route-id="@restaurant.Id" class="btn btn-info">View</a>
+                    <a asp-action="Update" asp-route-id="@restaurant.Id" class="btn btn-warning">Update</a>
+                    <form asp-action="Delete" asp-route-id="@restaurant.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-

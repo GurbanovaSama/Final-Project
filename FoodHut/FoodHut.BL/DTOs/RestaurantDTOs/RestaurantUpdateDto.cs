@@ -12,7 +12,7 @@ public record RestaurantUpdateDto
     public string Location { get; set; }
     public string PhoneNumber { get; set; }
     public string Email { get; set; }
-    public string ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
     public IFormFile? Image { get; set; }
 }
 
@@ -48,5 +48,8 @@ public class RestaurantUpdateDtoValidation : AbstractValidator<RestaurantUpdateD
         RuleFor(x => x.Image)
             .Must(x => x is null || x.Length <= 2 * 1024 * 1024).WithMessage("File size must be less than 2 MB!")
             .Must(x => x is null || x.CheckType("image")).WithMessage("File must be image!");
+
+        RuleFor(x => x.ImageUrl)
+            .Must(x => string.IsNullOrEmpty(x) || Uri.IsWellFormedUriString(x, UriKind.Absolute)).WithMessage("Image URL must be valid if provided.");
     }
 }

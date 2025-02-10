@@ -55,6 +55,13 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.Restaurants = (await _service.GetAllAsync()).Select(r =>
+                new SelectListItem
+                {
+                    Value = r.Id.ToString(),
+                    Text = r.Name
+                }).ToList();
+
                 return View(dto);
             }
 
@@ -69,16 +76,31 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
                     }
                     dto.ImageUrl = await dto.Image.SaveAsync("restaurant");
                 }
+                else
+                {
+                    ModelState.AddModelError("Image", "Please upload an image.");
+                    return View(dto);
+                }
             }
-            await _service.CreateAsync(dto);
-            await _service.SaveChangesAsync();
+
+            try
+            {
+                await _service.CreateAsync(dto);
+                await _service.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+                ModelState.AddModelError("", "An error occurred while creating the restaurant.");
+                return View(dto);
+            }
+           
             return RedirectToAction(nameof(Index));
         }
 
         //UPDATE
         public async Task<IActionResult> Update(int id)
         {
-            RestaurantViewItemDto? restaurant = await _service.GetByIdAsync(id);
+           RestaurantUpdateDto? restaurant = await _service.GetUpdateByIdAsync(id);  
             if (restaurant == null)
             {
                 return NotFound("Restaurant not found.");
@@ -115,7 +137,8 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
             }
             else
             {
-                dto.ImageUrl = existingRestaurant.ImageUrl;
+                ModelState.AddModelError("Image", "Please upload an image.");
+                return View(dto);
             }
 
             await _service.UpdateAsync(dto);

@@ -1,0 +1,16 @@
+﻿@model CategoryViewItemDto
+
+@{
+    ViewData["Title"] = "Category Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <strong>Name:</strong> @Model.Name
+</div>
+
+<div>
+    <a href="@Url.Action("Index", "Category")" class="btn btn-secondary">Back to List</a>
+</div>
+
