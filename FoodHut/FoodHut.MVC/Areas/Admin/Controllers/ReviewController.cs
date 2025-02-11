@@ -1,4 +1,5 @@
 ﻿using FoodHut.BL.DTOs;
+using FoodHut.BL.Exceptions;
 using FoodHut.BL.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,6 +43,7 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ReviewCreateDto reviewCreateDto)
         {
             if (!ModelState.IsValid)
@@ -49,8 +51,22 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
                 return View(reviewCreateDto);
             }
 
-            await _reviewService.CreateAsync(reviewCreateDto);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _reviewService.CreateAsync(reviewCreateDto);
+                await _reviewService.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            catch (BaseException ex)
+            {
+                ModelState.AddModelError("CustomError", ex.Message);
+                return View(reviewCreateDto);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("CustomError", "Something went wrong!");
+                return View(reviewCreateDto);
+            }
         }
 
 
@@ -88,32 +104,18 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            await _reviewService.SaveChangesAsync();        
             return RedirectToAction(nameof(Index));
         }
 
 
         //DELETE
-        [HttpGet]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            ReviewViewItemDto? review = await _reviewService.GetByIdAsync(id);
-            if (review == null)
-            {
-                return NotFound();
-            }
-
-            return View(review);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            bool deleted = await _reviewService.DeleteAsync(id);
-            if (!deleted)
-            {
-                return NotFound();
-            }
-
+            await _reviewService.DeleteAsync(id);
+            await _reviewService.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
     }

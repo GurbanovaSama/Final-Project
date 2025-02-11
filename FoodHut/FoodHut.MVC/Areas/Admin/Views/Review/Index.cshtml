@@ -24,9 +24,11 @@
                 <td>@review.Comment</td>
                 <td>@review.Rating</td>
                 <td>
-                    <a asp-controller="Review" asp-action="Details" asp-route-id="@review.Id" class="btn btn-info btn-sm">View</a>
-                    <a asp-controller="Review" asp-action="Edit" asp-route-id="@review.Id" class="btn btn-warning btn-sm">Update</a>
-                    <a asp-controller="Review" asp-action="Delete" asp-route-id="@review.Id" class="btn btn-danger btn-sm">Delete</a>
+                    <a asp-controller="Review" asp-action="Details" asp-route-id="@review.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-controller="Review" asp-action="Update" asp-route-id="@review.Id" class="btn btn-warning btn-sm">Update</a>
+                    <form asp-action="Delete" asp-route-id="@review.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
         }
