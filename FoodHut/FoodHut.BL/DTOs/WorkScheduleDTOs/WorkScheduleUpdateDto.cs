@@ -6,6 +6,8 @@ public record WorkScheduleUpdateDto
 {
     [Required]
     public int Id { get; set; }
+    [Required(ErrorMessage = "Restaurant selection is required.")]
+    public int RestaurantId { get; set; }
 
     [Required(ErrorMessage = "The day should definitely be celebrated.")]
     [EnumDataType(typeof(DayOfWeek), ErrorMessage = "Incorrect day type selected.")]

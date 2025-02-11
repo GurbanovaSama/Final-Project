@@ -1,18 +1,22 @@
-﻿@model ProductViewItemDto
+﻿@model Product
 
-@{
-    ViewData["Title"] = "Product Details";
-}
 
-<h1>@ViewData["Title"]</h1>
-
-<div>
-    <h3>@Model.Name</h3>
-    <p>@Model.Description</p>
-    <p><strong>Price: </strong>@Model.Price</p>
-    <img src="@Url.Content("~/uploads/products/" + Model.ImageUrl)" alt="@Model.Name" class="img-fluid" />
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Product Details</h6>
+        </div>
+        <div class="card-body">
+            <img style="width: 150px" src="~/uploads/places/@Model.ImageUrl" />
+            <p>Id: @Model.Id</p>
+            <p>Title: @Model.Name</p>
+            <p>Description: @Model.Description</p>
+            <p>Minimum price: @Model.Price</p>
+            <p>Create time: @Model.CreatedAt</p>
+            @if (Model.UpdatedAt is not null)
+            {
+                <p>Update time: @Model.UpdatedAt</p>
+            }
+        </div>
+    </div>
 </div>
-
-<p>
-    <a href="@Url.Action("Index", "Product")" class="btn btn-primary">Back to List</a>
-</p>

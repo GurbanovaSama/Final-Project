@@ -1,20 +1,36 @@
-﻿@model WorkScheduleCreateDto
+﻿@model WorkScheduleUpdateDto
 
-<h2>Create Work Schedule</h2>
+<h2>Update Work Schedule</h2>
 
-<form asp-action="Create" method="post">
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
     <div class="mb-3">
-        <label class="form-label">Day</label>
+        <label asp-for="Day" class="form-label">Day</label>
         <select asp-for="Day" asp-items="Html.GetEnumSelectList<DayOfWeek>()" class="form-control"></select>
+        <span asp-validation-for="Day" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
-        <label class="form-label">Open Time</label>
+        <label asp-for="OpenTime" class="form-label">Open Time</label>
         <input asp-for="OpenTime" type="time" class="form-control" />
+        <span asp-validation-for="OpenTime" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
-        <label class="form-label">Close Time</label>
+        <label asp-for="CloseTime" class="form-label">Close Time</label>
         <input asp-for="CloseTime" type="time" class="form-control" />
+        <span asp-validation-for="CloseTime" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+
+    <div class="mb-3">
+        <label for="RestaurantId" class="form-label">Restaurant</label>
+        <select asp-for="RestaurantId" asp-items="ViewBag.Restaurants" class="form-control">
+            <option value="">-- Select Restaurant --</option>
+        </select>
+        <span asp-validation-for="RestaurantId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

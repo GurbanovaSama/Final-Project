@@ -20,8 +20,15 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
+            try
+            {
             ICollection<WorkScheduleListItemDto> schedules = await _service.GetAllAsync();
             return View(schedules);
+            }
+            catch(Exception)
+            {
+                return BadRequest("Something went wrong!");
+            }
         }
 
         //DETAILS
@@ -38,12 +45,13 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         //CREATE
         public async Task<IActionResult> Create()
         {
-            ViewBag.WorkSchedules = (await _service.GetAllAsync()).Select(x => 
-            new SelectListItem
-            {
-                Value = x.Id.ToString(),    
-                Text = $"{x.Day} ({x.OpenTime} - {x.CloseTime})"
-            }).ToList();
+            ViewBag.Restaurants = (await _restaurantService.GetAllAsync()).Select(x =>
+               new SelectListItem
+               {
+                   Value = x.Id.ToString(),
+                   Text = x.Name
+               }).ToList();
+
             return View();
         }
 
@@ -51,82 +59,89 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(WorkScheduleCreateDto dto)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                ViewBag.Restaurants = await _restaurantService.GetAllAsync();
-                return View(dto);   
+                ViewBag.Restaurants = (await _restaurantService.GetAllAsync()).Select(x =>
+                    new SelectListItem
+                    {
+                        Value = x.Id.ToString(),
+                        Text = x.Name
+                    }).ToList();
+
+                return View(dto);
             }
-            if (dto.RestaurantId == 0) // və ya null-dursa
+
+            if (dto.RestaurantId == 0)
             {
                 ModelState.AddModelError("", "Restaurant is required.");
                 return View(dto);
             }
-            await _service.CreateAsync(dto);    
-            await _service.SaveChangesAsync();  
-            return RedirectToAction(nameof(Index));     
+
+            await _service.CreateAsync(dto);
+            await _service.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         //UPDATE
         public async Task<IActionResult> Update(int id)
         {
             WorkScheduleViewItemDto? schedule = await _service.GetByIdAsync(id);
-            if(schedule == null)
+            if (schedule == null)
             {
                 return NotFound();
             }
 
-            ViewBag.Restaurants = await _restaurantService.GetAllAsync();   
+            ViewBag.Restaurants = (await _restaurantService.GetAllAsync()).Select(x =>
+                new SelectListItem
+                {
+                    Value = x.Id.ToString(),
+                    Text = x.Name
+                }).ToList();
 
             WorkScheduleUpdateDto dto = new()
-            { 
+            {
                 Id = id,
                 Day = Enum.Parse<DayOfWeek>(schedule.Day),
                 OpenTime = TimeSpan.Parse(schedule.OpenTime),
                 CloseTime = TimeSpan.Parse(schedule.CloseTime)
             };
-            return View(dto);   
+            return View(dto);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(WorkScheduleUpdateDto dto)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
+                ViewBag.Restaurants = (await _restaurantService.GetAllAsync()).Select(x =>
+                    new SelectListItem
+                    {
+                        Value = x.Id.ToString(),
+                        Text = x.Name
+                    }).ToList();
+
                 return View(dto);
             }
 
-            bool updated = await _service.UpdateAsync(dto); 
-            if(!updated)
+            bool updated = await _service.UpdateAsync(dto);
+            if (!updated)
             {
                 return NotFound();
             }
+
             await _service.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         //DELETE
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            WorkScheduleViewItemDto? schedule = await _service.GetByIdAsync(id);
-            if(schedule == null)
-            {
-                return NotFound();
-            }
-            return View(schedule);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            bool deleted = await _service.DeleteAsync(id);
-            if(!deleted)
-            {
-                return NotFound();
-            }
-            await _service.SaveChangesAsync();  
-            return RedirectToAction(nameof(Index));     
+            await _service.DeleteAsync(id);
+            await _service.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
 

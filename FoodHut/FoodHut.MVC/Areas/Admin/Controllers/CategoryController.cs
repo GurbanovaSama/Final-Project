@@ -1,4 +1,5 @@
 ﻿using FoodHut.BL.DTOs;
+using FoodHut.BL.Exceptions;
 using FoodHut.BL.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,176 +8,136 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
     [Area("Admin")]
     public class CategoryController : Controller
     {
-        private readonly ICategoryService _categoryService;
+        private readonly ICategoryService _service;
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController(ICategoryService service)
         {
-            _categoryService = categoryService;
+            _service = service;
         }
+
+
 
         //INDEX
         public async Task<IActionResult> Index()
         {
-            ICollection<CategoryListItemDto> categories = await _categoryService.GetAllAsync();    
-            //if(categories == null )
-            //{
-            //    categories = new List<CategoryListItemDto>();
-            //}
-            return View(categories);
+            IEnumerable<CategoryListItemDto> list = await _service.GetCategoryListItemsAsync();
+
+            return View(list);
         }
 
         //DETAILS
         public async Task<IActionResult> Details(int id)
         {
-            if(id<= 0)
+            try
             {
-                //TempData["ErrorMessage"] = "Invalid category ID.";
-                //return RedirectToAction(nameof(Index));
-                return NotFound();  
+                return View(await _service.GetByIdWithChildrenAsync(id));
             }
-            CategoryViewItemDto category = await _categoryService.GetByIdAsync(id);    
-            if(category == null)
+            catch (BaseException ex)
             {
-                //TempData["ErrorMessage"] = "The requested category was not found.";
-                //return RedirectToAction(nameof(Index));     
-                return NotFound();
+                return BadRequest(ex.Message);
             }
-            return View(category);  
+            catch (Exception)
+            {
+                return BadRequest("Something went wrong!");
+            }
         }
 
         //CREATE
         public IActionResult Create()
         {
-            return View();      
+            return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]  
-        public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CategoryCreateDto dto)
         {
-            //if(categoryCreateDto == null)
-            //{
-            //    return BadRequest("Category information cannot be empty.");
-            //}
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return View(categoryCreateDto); 
+                return View(dto);
             }
 
             try
             {
-                await _categoryService.CreateAsync(categoryCreateDto);
-                await _categoryService.SaveChangesAsync();
-            }   
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", $"An error occurred: {ex.Message}");
-                return View(categoryCreateDto); 
+                await _service.CreateAsync(dto);
+                await _service.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
-            return RedirectToAction(nameof(Index));     
+            catch (BaseException ex)
+            {
+                ModelState.AddModelError("CustomError", ex.Message);
+                return View(dto);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("CustomError", "Something went wrong!");
+                return View(dto);
+            }
         }
 
+
         //UPDATE
-        public async Task<IActionResult> Update(int  id)
+        public async Task<IActionResult> Update(int id)
         {
-            if(id <= 0)
+            try
             {
-                return NotFound();  
+                return View(await _service.GetByIdForUpdateAsync(id));
             }
-            CategoryViewItemDto category = await _categoryService.GetByIdAsync(id);
-            if(category == null)
+            catch (BaseException ex)
             {
-                return NotFound();
+                return BadRequest(ex.Message);
             }
-
-            var categoryUpdateDto = new CategoryUpdateDto
+            catch (Exception)
             {
-                Id = id,
-                Name = category.Name,
-                RestaurantId = category.RestaurantId
-            };
-
-            return View(categoryUpdateDto);
-
-            //return View(new CategoryUpdateDto { Id = id, Name = category?.Name ?? ""});     
+                return BadRequest("Something went wrong!");
+            }
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]  
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(CategoryUpdateDto dto)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var result = await _categoryService.UpdateAsync(dto);
-                if (result)
-                {
-                    await _categoryService.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-
-                ModelState.AddModelError(string.Empty, "Category not found.");
+                return View(dto);
             }
-            return View(dto);
-            //if(!ModelState.IsValid)
-            //{
-            //    return View(dto);   
-            //}
 
-            //bool isUpdated = await _categoryService.UpdateAsync(dto);   
-            //if(!isUpdated)
-            //{
-            //    return NotFound();
-            //}
-            //return RedirectToAction(nameof(Index));
+            try
+            {
+                await _service.UpdateAsync(dto);
+                await _service.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            catch (BaseException ex)
+            {
+                ModelState.AddModelError("CustomError", ex.Message);
+                return View(dto);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("CustomError", "Something went wrong!");
+                return View(dto);
+            }
         }
 
 
         //DELETE
         public async Task<IActionResult> Delete(int id)
         {
-            if (id <= 0)
+            try
             {
-                return NotFound();
+                await _service.DeleteAsync(id);
+                await _service.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
-
-            var category = await _categoryService.GetByIdAsync(id);
-            if (category == null)
+            catch (BaseException ex)
             {
-                return NotFound();
+                return BadRequest(ex.Message);
             }
-
-            return View(category);
+            catch (Exception)
+            {
+                return BadRequest("Something went wrong!");
+            }
         }
-
-       
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var result = await _categoryService.DeleteAsync(id);
-            if (result)
-            {
-                await _categoryService.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            return NotFound();
-        }
-
-
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    bool isDeleted = await _categoryService.DeleteAsync(id);      
-        //    if(!isDeleted)
-        //    {
-        //        return NotFound();  
-        //    }
-
-        //    await _categoryService.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
     }
 }

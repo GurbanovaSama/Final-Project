@@ -23,14 +23,14 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         {
             try
             {
-                ICollection<ProductListItemDto> products = await _productService.GetAllAsync();
-                return View(products);
+                IEnumerable<ProductListItemDto> list = await _productService.GetListItemsAsync();
+
+                return View(list);
             }
             catch (Exception)
             {
                 return BadRequest("Something went wrong!");
             }
-          
         }
         //DETAILS
         public async Task<IActionResult> Details(int id)
@@ -54,7 +54,7 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         {
             try
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
                 return View();
             }
             catch (Exception)
@@ -67,9 +67,10 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCreateDto productCreateDto)
         {
+
             if (!ModelState.IsValid)
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
                 return View(productCreateDto);
             }
 
@@ -81,13 +82,13 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
             }
             catch (BaseException ex)
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
                 ModelState.AddModelError("CustomError", ex.Message);
                 return View(productCreateDto);
             }
             catch (Exception)
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
                 ModelState.AddModelError("CustomError", "Something went wrong!");
                 return View(productCreateDto);
             }
@@ -99,8 +100,8 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         {
             try
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
-                return View(await _productService.GetByIdAsync(id));
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
+                return View(await _productService.GetByIdForUpdateAsync(id));
             }
             catch (BaseException ex)
             {
@@ -118,7 +119,7 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
                 return View(productUpdateDto);
             }
 
@@ -130,13 +131,13 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
             }
             catch (BaseException ex)
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
                 ModelState.AddModelError("CustomError", ex.Message);
                 return View(productUpdateDto);
             }
             catch (Exception)
             {
-                ViewData["Categories"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "Title");
+                ViewData["Categories"] = new SelectList(await _categoryService.GetCategoryListItemsAsync(), "Id", "Name");
                 ModelState.AddModelError("CustomError", "Something went wrong!");
                 return View(productUpdateDto);
             }

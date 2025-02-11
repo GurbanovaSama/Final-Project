@@ -8013,6 +8013,18 @@
       "PackagePath": "staticwebassets\\uploads\\restaurant\\f17187ad-a8b1-471f-b874-56e6a31dba40928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp"
     },
     {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurants\\8b9e3b7a-a7f4-40bc-a1ec-461cda27d044images (1).jpg",
+      "PackagePath": "staticwebassets\\uploads\\restaurants\\8b9e3b7a-a7f4-40bc-a1ec-461cda27d044images (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurants\\9e7f093c-ffc4-445e-964f-9073a1396735images.jpg",
+      "PackagePath": "staticwebassets\\uploads\\restaurants\\9e7f093c-ffc4-445e-964f-9073a1396735images.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurants\\f67bf0c7-0afa-4b16-921c-e34ea5fd5e0cimages.jpg",
+      "PackagePath": "staticwebassets\\uploads\\restaurants\\f67bf0c7-0afa-4b16-921c-e34ea5fd5e0cimages.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FoodHut.MVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

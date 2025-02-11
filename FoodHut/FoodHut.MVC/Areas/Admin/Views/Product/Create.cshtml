@@ -1,45 +1,45 @@
 ﻿@model ProductCreateDto
 @{
-    SelectList categories = ViewData["Categories"] as SelectList;
-}  ViewData["Title"] = "Create New Product";
+    SelectList categories = (ViewData["Categories"] as SelectList) ?? new SelectList(new List<string>());
 }
 
-
-
-<form asp-controller="Product" asp-action="Create" enctype="multipart/form-data" method="post">
-    <div class="form-group">
-        <label for="Name">Product Name</label>
-        <input type="text" id="Name" name="Name" class="form-control" value="@Model.Name" required />
+<div class="row align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="card shadow col-lg-6 col-md-8 col-10 p-0">
+        <div class="card-header d-flex justify-content-between align-items-center py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Add Product</h6>
+        </div>
+        <div class="card-body">
+            <form class="container" asp-action="Create" asp-controller="Product" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Name"></label>
+                    <input class="form-control" asp-for="Name" />
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Description"></label>
+                    <input class="form-control" asp-for="Description" />
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Image"></label>
+                    <input type="file" class="form-control" asp-for="Image" />
+                    <span class="text-danger" asp-validation-for="Image"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Price"></label>
+                    <input class="form-control" asp-for="Price" />
+                    <span class="text-danger" asp-validation-for="Price"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="CategoryId"></label>
+                    <select class="custom-select" asp-items="categories" asp-for="CategoryId">
+                        <option value="">Select Category</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="CategoryId"></span>
+                </div>
+                <p class="text-danger text-center">@Html.ValidationMessage("CustomError")</p>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label for="Description">Description</label>
-        <textarea id="Description" name="Description" class="form-control" required>@Model.Description</textarea>
-    </div>
-
-    <div class="form-group">
-        <label for="Price">Price</label>
-        <input type="number" id="Price" name="Price" class="form-control" value="@Model.Price" required />
-    </div>
-
-    <div class="form-group">
-        <label for="Image">Image</label>
-        <input type="file" id="Image" name="Image" class="form-control" required />
-    </div>
-
-    <div class="form-group">
-        <label for="RestaurantId">Restaurant ID</label>
-        <input type="number" id="RestaurantId" name="RestaurantId" class="form-control" value="@Model.RestaurantId" required />
-    </div>
-
-    <div class="form-group">
-        <label for="CategoryId">Category ID</label>
-        <input type="number" id="CategoryId" name="CategoryId" class="form-control" value="@Model.CategoryId" required />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Create Product</button>
-</form>
-
-<p>
-    <a href="@Url.Action("Index", "Product")" class="btn btn-secondary">Cancel</a>
-</p>
+</div>

@@ -1,5 +1,6 @@
 ﻿using FoodHut.BL.DTOs;
 using FoodHut.BL.Services.Abstractions;
+using FoodHut.BL.Services.Implementations;
 using FoodHut.BL.Utilities;
 using FoodHut.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -39,12 +40,17 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         //CREATE
         public async Task<IActionResult> Create()
         {
-            ViewBag.Restaurants = (await _service.GetAllAsync()).Select(r =>
-               new SelectListItem
-               {
-                   Value = r.Id.ToString(),
-                   Text = r.Name
-               }).ToList();
+            var restaurants = await _service.GetAllAsync();
+
+            var restaurantSelectList = restaurants
+                .Select(r => new SelectListItem
+                {
+                    Value = r.Id.ToString(),
+                    Text = r.Name
+                })
+                .ToList();
+
+            ViewBag.Restaurants = restaurantSelectList;
 
             return View();
         }

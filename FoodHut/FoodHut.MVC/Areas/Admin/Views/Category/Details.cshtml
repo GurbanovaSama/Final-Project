@@ -1,16 +1,43 @@
-﻿@model CategoryViewItemDto
+﻿@model Category
 
-@{
-    ViewData["Title"] = "Category Details";
-}
 
-<h1>Category Details</h1>
-
-<div>
-    <h4>@Model.Name</h4>
-    <p><strong>Restaurant ID:</strong> @Model.RestaurantId</p>
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Category Details</h6>
+        </div>
+        <div class="card-body">
+            <p>Id: @Model.Id</p>
+            <p>Title: @Model.Name</p>
+            <p>Create time: @Model.CreatedAt</p>
+            @if (Model.UpdatedAt is not null)
+            {
+                <p>Update time: @Model.UpdatedAt</p>
+            }
+            @if (Model.Products.Count != 0)
+            {
+                <table class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Product item in Model.Products)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Description</td>
+                                <td>@item.Price</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
 </div>
-
-<p>
-    <a href="@Url.Action("Index")" class="btn btn-primary">Back to List</a>
-</p>

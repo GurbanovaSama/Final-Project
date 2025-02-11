@@ -18,15 +18,16 @@ public class RestaurantService : IRestaurantService
         _repository = repository;
     }
 
+
     public async Task<ICollection<RestaurantListItemDto>> GetAllAsync()
     {
-        ICollection<Restaurant> restaurants = await _repository.GetAllAsync();  
-        return _mapper.Map<ICollection<RestaurantListItemDto>>(restaurants);    
+        ICollection<Restaurant> restaurants = await _repository.GetAllAsync();
+        return _mapper.Map<ICollection<RestaurantListItemDto>>(restaurants);
     }
 
     public async Task<RestaurantViewItemDto?> GetByIdAsync(int id)
     {
-        Restaurant? restaurant = await _repository.GetByIdAsync(id);     
+        Restaurant? restaurant = await _repository.GetByIdAsync(id);
         return _mapper.Map<RestaurantViewItemDto>(restaurant);
     }
 
@@ -38,29 +39,28 @@ public class RestaurantService : IRestaurantService
 
     public async Task CreateAsync(RestaurantCreateDto createDto)
     {
-        Restaurant restaurant = _mapper.Map<Restaurant>(createDto); 
-        await _repository.CreateAsync(restaurant);      
+        Restaurant restaurant = _mapper.Map<Restaurant>(createDto);
+        await _repository.CreateAsync(restaurant);
     }
 
     public async Task UpdateAsync(RestaurantUpdateDto updateDto)
     {
-        Restaurant? restaurant = await _repository.GetByIdAsync(updateDto.Id);       
-        if(restaurant != null)
+        Restaurant? restaurant = await _repository.GetByIdAsync(updateDto.Id);
+        if (restaurant != null)
         {
-            _mapper.Map(updateDto, restaurant); 
-            _repository.Update(restaurant); 
+            _mapper.Map(updateDto, restaurant);
+            _repository.Update(restaurant);
         }
     }
 
     public async Task DeleteAsync(int id)
     {
         Restaurant? restaurant = await _repository.GetByIdAsync(id);
-        if(restaurant != null)
+        if (restaurant != null)
         {
-            _repository.Delete(restaurant); 
+            _repository.Delete(restaurant);
         }
     }
-
 
     public async Task<int> SaveChangesAsync() => await _repository.SaveChangesAsync();
 }
