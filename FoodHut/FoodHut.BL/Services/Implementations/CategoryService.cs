@@ -25,14 +25,18 @@ public class CategoryService : ICategoryService
 
     public async Task<CategoryViewItemDto?> GetByIdAsync(int id)
     {
-        Category? category = await _repository.GetByIdAsync(id);        
-        if(category == null)
-        {
-            return null;    
-        }
+        //if(id <= 0)
+        //{
+        //    return null;    
+        //}
 
-        CategoryViewItemDto categoryDto = _mapper.Map<CategoryViewItemDto>(category);   
-        return categoryDto; 
+        Category category = await _repository.GetByIdAsync(id);        
+        //if(category == null)
+        //{
+        //    return null;    
+        //}
+
+        return _mapper.Map<CategoryViewItemDto?>(category);   
     }
 
     public async Task CreateAsync(CategoryCreateDto categoryCreateDto)
@@ -44,7 +48,7 @@ public class CategoryService : ICategoryService
     public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto)
     {
         Category category = await _repository.GetByIdAsync(categoryUpdateDto.Id);   
-        if(category == null)
+        if(category is null)
         {
             return false;   
         }
@@ -57,8 +61,8 @@ public class CategoryService : ICategoryService
 
     public async Task<bool> DeleteAsync(int id)
     {
-        Category? category = await _repository.GetByIdAsync(id);
-        if(category == null)
+        Category category = await _repository.GetByIdAsync(id);
+        if(category is null)
         {
             return false;   
         }

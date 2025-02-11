@@ -1,37 +1,73 @@
-﻿using FoodHut.BL.DTOs;
+﻿using AutoMapper;
+using FoodHut.BL.DTOs;
 using FoodHut.BL.Services.Abstractions;
+using FoodHut.DAL.Models;
+using FoodHut.DAL.Repository.Abstractions;
 
 namespace FoodHut.BL.Services.Implementations;
 
 public class ReviewService : IReviewService
 {
-    public Task CreateAsync(ReviewCreateDto reviewCreateDto)
+    private readonly IRepository<Review> _reviewRepository;
+    private readonly IMapper _mapper;
+
+    public ReviewService(IMapper mapper, IRepository<Review> reviewRepository)
     {
-        throw new NotImplementedException();
+        _mapper = mapper;
+        _reviewRepository = reviewRepository;
     }
 
-    public Task<bool> DeleteAsync(int id)
+    public async Task<ICollection<ReviewListItemDto>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        ICollection<Review> reviews = (await _reviewRepository.GetAllAsync()).ToList();
+        ICollection<ReviewListItemDto> reviewDtos = _mapper.Map<ICollection<ReviewListItemDto>>(reviews);
+        return reviewDtos;
     }
 
-    public Task<ICollection<ReviewListItemDto>> GetAllAsync()
+    public async Task<ReviewViewItemDto?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        Review? review = await _reviewRepository.GetByIdAsync(id);
+        if (review == null)
+        {
+            return null;
+        }
+
+        ReviewViewItemDto reviewDto = _mapper.Map<ReviewViewItemDto>(review);
+        return reviewDto;
     }
 
-    public Task<ReviewViewItemDto?> GetByIdAsync(int id)
+    public async Task CreateAsync(ReviewCreateDto reviewCreateDto)
     {
-        throw new NotImplementedException();
+        Review review = _mapper.Map<Review>(reviewCreateDto);
+        await _reviewRepository.CreateAsync(review);
     }
 
-    public Task<int> SaveChangesAsync()
+    public async Task<bool> UpdateAsync(ReviewUpdateDto reviewUpdateDto)
     {
-        throw new NotImplementedException();
+
+        Review? existingReview = await _reviewRepository.GetByIdAsync(reviewUpdateDto.Id);
+        if (existingReview == null)
+        {
+            return false;
+        }
+
+        existingReview.Comment = reviewUpdateDto.Comment;
+        existingReview.Rating = reviewUpdateDto.Rating;
+
+        _reviewRepository.Update(existingReview);
+        return true;
+    }
+    public async Task<bool> DeleteAsync(int id)
+    {
+        Review? review = await _reviewRepository.GetByIdAsync(id);
+        if (review == null)
+        {
+            return false;
+        }
+
+        _reviewRepository.Delete(review);
+        return true;
     }
 
-    public Task<bool> UpdateAsync(ReviewUpdateDto reviewUpdateDto)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<int> SaveChangesAsync() => await _reviewRepository.SaveChangesAsync();        
 }

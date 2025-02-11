@@ -4,12 +4,17 @@
     ViewData["Title"] = "Categories";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>Categories</h1>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Category</a>
+</p>
 
 <table class="table">
     <thead>
         <tr>
             <th>Name</th>
+            <th>Restaurant ID</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -18,14 +23,13 @@
         {
             <tr>
                 <td>@category.Name</td>
+                <td>@category.RestaurantId</td>
                 <td>
-                    <a href="@Url.Action("Details", "Category", new { id = category.Id })">Details</a> |
-                    <a href="@Url.Action("Update", "Category", new { id = category.Id })">Update</a> |
-                    <a href="@Url.Action("Delete", "Category", new { id = category.Id })">Delete</a>
+                    <a href="@Url.Action("Details", new { id = category.Id })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", new { id = category.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = category.Id })" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-<a href="@Url.Action("Create", "Category")" class="btn btn-primary">Create New Category</a>

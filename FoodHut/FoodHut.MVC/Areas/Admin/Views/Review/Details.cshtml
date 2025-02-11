@@ -1,0 +1,16 @@
+﻿@model ReviewViewItemDto
+
+@{
+    ViewData["Title"] = "Review Details";
+}
+
+<h2>Review Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.UserName</h5>
+        <p class="card-text"><strong>Comment:</strong> @Model.Comment</p>
+        <p class="card-text"><strong>Rating:</strong> @Model.Rating</p>
+        <a asp-controller="Review" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

@@ -18,20 +18,28 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ICollection<CategoryListItemDto> categories = await _categoryService.GetAllAsync();    
-            if(categories == null )
-            {
-                categories = new List<CategoryListItemDto>();
-            }
+            //if(categories == null )
+            //{
+            //    categories = new List<CategoryListItemDto>();
+            //}
             return View(categories);
         }
 
         //DETAILS
         public async Task<IActionResult> Details(int id)
         {
-            CategoryViewItemDto? category = await _categoryService.GetByIdAsync(id);    
+            if(id<= 0)
+            {
+                //TempData["ErrorMessage"] = "Invalid category ID.";
+                //return RedirectToAction(nameof(Index));
+                return NotFound();  
+            }
+            CategoryViewItemDto category = await _categoryService.GetByIdAsync(id);    
             if(category == null)
             {
-                return NotFound();  
+                //TempData["ErrorMessage"] = "The requested category was not found.";
+                //return RedirectToAction(nameof(Index));     
+                return NotFound();
             }
             return View(category);  
         }
@@ -46,6 +54,10 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]  
         public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
         {
+            //if(categoryCreateDto == null)
+            //{
+            //    return BadRequest("Category information cannot be empty.");
+            //}
             if(!ModelState.IsValid)
             {
                 return View(categoryCreateDto); 
@@ -67,46 +79,104 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
         //UPDATE
         public async Task<IActionResult> Update(int  id)
         {
-            CategoryViewItemDto? category = await _categoryService.GetByIdAsync(id);
+            if(id <= 0)
+            {
+                return NotFound();  
+            }
+            CategoryViewItemDto category = await _categoryService.GetByIdAsync(id);
             if(category == null)
             {
                 return NotFound();
             }
-            CategoryUpdateDto categoryUpdateDto = new CategoryUpdateDto
-            { 
+
+            var categoryUpdateDto = new CategoryUpdateDto
+            {
                 Id = id,
                 Name = category.Name,
+                RestaurantId = category.RestaurantId
             };
 
-            return View(categoryUpdateDto);     
+            return View(categoryUpdateDto);
+
+            //return View(new CategoryUpdateDto { Id = id, Name = category?.Name ?? ""});     
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]  
         public async Task<IActionResult> Update(CategoryUpdateDto dto)
         {
-            if(!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(dto);   
-            }
+                var result = await _categoryService.UpdateAsync(dto);
+                if (result)
+                {
+                    await _categoryService.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
 
-            bool isUpdated = await _categoryService.UpdateAsync(dto);   
-            if(!isUpdated)
-            {
-                return NotFound();
+                ModelState.AddModelError(string.Empty, "Category not found.");
             }
-            return RedirectToAction(nameof(Index));
+            return View(dto);
+            //if(!ModelState.IsValid)
+            //{
+            //    return View(dto);   
+            //}
+
+            //bool isUpdated = await _categoryService.UpdateAsync(dto);   
+            //if(!isUpdated)
+            //{
+            //    return NotFound();
+            //}
+            //return RedirectToAction(nameof(Index));
         }
 
 
         //DELETE
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            await _categoryService.DeleteAsync(id);
-            await _categoryService.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            if (id <= 0)
+            {
+                return NotFound();
+            }
+
+            var category = await _categoryService.GetByIdAsync(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return View(category);
         }
+
+       
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var result = await _categoryService.DeleteAsync(id);
+            if (result)
+            {
+                await _categoryService.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return NotFound();
+        }
+
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    bool isDeleted = await _categoryService.DeleteAsync(id);      
+        //    if(!isDeleted)
+        //    {
+        //        return NotFound();  
+        //    }
+
+        //    await _categoryService.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
     }
 }

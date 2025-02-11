@@ -1,0 +1,37 @@
+﻿@model ICollection<ProductListItemDto>
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a href="@Url.Action("Create", "Product")" class="btn btn-primary">Create New Product</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Price</td>
+                <td>
+                    <a href="@Url.Action("Details", "Product", new { id = product.Id })" class="btn btn-info">View</a>
+                    <a href="@Url.Action("Update", "Product", new { id = product.Id })" class="btn btn-warning">Update</a>
+                    <a href="@Url.Action("Delete", "Product", new { id = product.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

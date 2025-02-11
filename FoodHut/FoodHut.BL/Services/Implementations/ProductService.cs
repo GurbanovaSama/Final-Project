@@ -1,37 +1,127 @@
 ﻿using FoodHut.BL.DTOs;
 using FoodHut.BL.Services.Abstractions;
+using FoodHut.BL.Utilities;
+using FoodHut.DAL.Models;
+using FoodHut.DAL.Repository.Abstractions;
 
 namespace FoodHut.BL.Services.Implementations;
 
 public class ProductService : IProductService
 {
-    public Task CreateAsync(ProductCreateDto productCreateDto)
+    private readonly IRepository<Product> _productRepository;
+    private readonly IRepository<Restaurant> _restaurantRepository;
+    private readonly IRepository<Category> _categoryRepository;
+
+    public ProductService(IRepository<Category> categoryRepository, IRepository<Restaurant> restaurantRepository, IRepository<Product> productRepository)
     {
-        throw new NotImplementedException();
+        _categoryRepository = categoryRepository;
+        _restaurantRepository = restaurantRepository;
+        _productRepository = productRepository;
     }
 
-    public Task<bool> DeleteAsync(int id)
+    public async Task<ICollection<ProductListItemDto>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        ICollection<Product> products = (await _productRepository.GetAllAsync()).ToList();
+
+        ICollection<ProductListItemDto> productDtos = products.Select(p => new ProductListItemDto
+        {
+            Id = p.Id,
+            Name = p.Name,
+            Description = p.Description,
+            Price = p.Price,
+            RestaurantId = p.RestaurantId,
+            CategoryId = p.CategoryId
+        }).ToList();
+
+        return productDtos;
     }
 
-    public Task<ICollection<ProductListItemDto>> GetAllAsync()
+    public async Task<ProductViewItemDto?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        Product? product = await _productRepository.GetByIdAsync(id);
+
+        if (product == null)
+            return null;
+
+        return new ProductViewItemDto
+        {
+            Name = product.Name,
+            Description = product.Description,
+            Price = product.Price,
+            ImageUrl = product.ImageUrl
+        };
     }
 
-    public Task<ProductViewItemDto?> GetByIdAsync(int id)
+    public async Task CreateAsync(ProductCreateDto productCreateDto)
     {
-        throw new NotImplementedException();
+        bool restaurantExists = await _restaurantRepository.GetByIdAsync(productCreateDto.RestaurantId) != null;
+
+        bool categoryExists = await _categoryRepository.GetByIdAsync(productCreateDto.CategoryId) != null;
+
+        if (!restaurantExists || !categoryExists)
+            throw new Exception("Invalid RestaurantId or CategoryId!");
+
+        string fileName = await productCreateDto.Image.SaveAsync("products");
+
+        Product product = new Product
+        {
+            Name = productCreateDto.Name,
+            Description = productCreateDto.Description,
+            Price = productCreateDto.Price,
+            ImageUrl = fileName,
+            RestaurantId = productCreateDto.RestaurantId,
+            CategoryId = productCreateDto.CategoryId
+        };
+
+        await _productRepository.CreateAsync(product);
     }
 
-    public Task<int> SaveChangesAsync()
+    public async Task<bool> UpdateAsync(ProductUpdateDto productUpdateDto)
     {
-        throw new NotImplementedException();
+        Product? product = await _productRepository.GetByIdAsync(productUpdateDto.Id);
+        if (product == null)
+            return false;
+
+        product.Name = productUpdateDto.Name;
+        product.Description = productUpdateDto.Description;
+        product.Price = productUpdateDto.Price;
+        product.RestaurantId = productUpdateDto.RestaurantId;
+        product.CategoryId = productUpdateDto.CategoryId;
+
+        if (productUpdateDto.Image != null)
+        {
+            // Əvvəlki şəkli silir və yenisini əlavə edir
+            if (!string.IsNullOrEmpty(product.ImageUrl))
+            {
+                string oldImagePath = Path.Combine(Path.GetFullPath("wwwroot"), "uploads", "products", product.ImageUrl);
+                if (File.Exists(oldImagePath))
+                    File.Delete(oldImagePath);
+            }
+
+            string fileName = await productUpdateDto.Image.SaveAsync("products");
+            product.ImageUrl = fileName;
+        }
+
+        _productRepository.Update(product);
+        return true;
     }
 
-    public Task<bool> UpdateAsync(ProductUpdateDto productUpdateDto)
+    public async Task<bool> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        Product? product = await _productRepository.GetByIdAsync(id);
+        if (product == null)
+            return false;
+
+        if (!string.IsNullOrEmpty(product.ImageUrl))
+        {
+            string imagePath = Path.Combine(Path.GetFullPath("wwwroot"), "uploads", "products", product.ImageUrl);
+            if (File.Exists(imagePath))
+                File.Delete(imagePath);
+        }
+
+        _productRepository.Delete(product);
+        return true;
     }
+
+    public async Task<int> SaveChangesAsync() => await _productRepository.SaveChangesAsync();       
 }
