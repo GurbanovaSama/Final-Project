@@ -7,4 +7,5 @@ public class HomeVM
 {
     public ICollection<CategoryViewItemDto> Categories { get; set; }
     public ICollection<ProductViewItemDto> Products { get; set; }
+    public ICollection<ReviewViewItemDto> Reviews { get; set; }
 }

@@ -17,12 +17,15 @@ public class ReviewService : IReviewService
         _reviewRepository = reviewRepository;
     }
 
+    public async Task<ICollection<ReviewViewItemDto>> GetViewItemsAsync() => _mapper.Map<ICollection<ReviewViewItemDto>>(await _reviewRepository.GetAllAsync());
+
     public async Task<ICollection<ReviewListItemDto>> GetAllAsync()
     {
         ICollection<Review> reviews = (await _reviewRepository.GetAllAsync()).ToList();
         ICollection<ReviewListItemDto> reviewDtos = _mapper.Map<ICollection<ReviewListItemDto>>(reviews);
         return reviewDtos;
     }
+
 
     public async Task<ReviewViewItemDto?> GetByIdAsync(int id)
     {
@@ -69,5 +72,6 @@ public class ReviewService : IReviewService
         return true;
     }
 
-    public async Task<int> SaveChangesAsync() => await _reviewRepository.SaveChangesAsync();        
+    public async Task<int> SaveChangesAsync() => await _reviewRepository.SaveChangesAsync();
+
 }

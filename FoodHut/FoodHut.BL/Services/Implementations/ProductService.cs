@@ -57,7 +57,7 @@ public class ProductService : IProductService
 
         _productRepository.Update(product);
 
-        if (dto.Image is not null) File.Delete(Path.Combine(Path.GetFullPath("wwwroot"), "uploads", "places", oldProduct.ImageUrl));
+        if (dto.Image is not null) File.Delete(Path.Combine(Path.GetFullPath("wwwroot"), "uploads", "products", oldProduct.ImageUrl));
     }
 
 

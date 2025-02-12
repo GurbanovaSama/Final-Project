@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoodHut.MVC.Areas.Admin.Controllers
 {
-    [Area("Admi")]
+    [Area("Admin")]
     public class AccountController : Controller
     {
         readonly IAccountService _service;
@@ -23,7 +23,7 @@ namespace FoodHut.MVC.Areas.Admin.Controllers
 
             return View();
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(UserLoginDTO dto, string? returnUrl = null)

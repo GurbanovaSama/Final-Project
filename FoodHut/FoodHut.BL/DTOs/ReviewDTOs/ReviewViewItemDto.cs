@@ -2,7 +2,8 @@
 
 public record ReviewViewItemDto
 {
-    public string UserName { get; set; }
-    public string Comment { get; set; }
+    public string Name { get; set; }
+    public string Position { get; set; }
+    public string Comment { get; set; }     
     public double Rating { get; set; }
 }

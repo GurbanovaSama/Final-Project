@@ -12,7 +12,6 @@ public record ProductUpdateDto
     public decimal Price { get; set; }
     public string ImageUrl { get; set; }        
     public IFormFile? Image { get; set; }
-    public int RestaurantId { get; set; }
     public int CategoryId { get; set; }
 }
 
@@ -41,10 +40,6 @@ public class ProductUpdateDtoValidation : AbstractValidator<ProductUpdateDto>
         RuleFor(e => e.Image)
              .Must(e => e is null || e.Length <= 2 * 1024 * 1024).WithMessage("File size must be less than 2 MB!")
              .Must(e => e is null || e.CheckType("image")).WithMessage("File must be image!");
-
-        RuleFor(e => e.RestaurantId)
-            .NotEmpty().WithMessage("Restaurant id cannot be empty!")
-            .GreaterThan(0).WithMessage("Restaurant id must be a natural number!");
 
         RuleFor(e => e.CategoryId)
             .GreaterThan(0).WithMessage("Category id must be a natural number!");

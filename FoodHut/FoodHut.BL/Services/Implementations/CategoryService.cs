@@ -19,8 +19,8 @@ public class CategoryService : ICategoryService
     }
     public async Task<Category> GetByIdAsync(int id) => await _repository.GetByIdAsync(id) ?? throw new BaseException();
 
-    public async Task<Category> GetByIdWithChildrenAsync(int id) => await _repository.GetByIdAsync(id, "Producs") ?? throw new BaseException();
-
+    public async Task<Category> GetByIdWithChildrenAsync(int id) => await _repository.GetByIdAsync(id, "Products") ?? throw new BaseException();
+    
     public async Task<CategoryUpdateDto> GetByIdForUpdateAsync(int id) => _mapper.Map<CategoryUpdateDto>(await GetByIdAsync(id));
 
     public async Task<ICollection<CategoryListItemDto>> GetCategoryListItemsAsync() => _mapper.Map<ICollection<CategoryListItemDto>>(await _repository.GetAllAsync());
@@ -46,7 +46,7 @@ public class CategoryService : ICategoryService
     public  async Task DeleteAsync(int id)
     {
         Category category = await GetByIdWithChildrenAsync(id);
-        if (category.Products.Count != 0) throw new BaseException("This category has places!");
+        if (category.Products.Count != 0) throw new BaseException("This category has products!");
         _repository.Delete(category);
     }
 

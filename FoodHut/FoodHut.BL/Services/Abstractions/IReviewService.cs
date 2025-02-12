@@ -4,6 +4,7 @@ namespace FoodHut.BL.Services.Abstractions;
 
 public interface IReviewService
 {
+    Task<ICollection<ReviewViewItemDto>> GetViewItemsAsync();
     Task<ICollection<ReviewListItemDto>> GetAllAsync();
     Task<ReviewViewItemDto?> GetByIdAsync(int id);
     Task CreateAsync(ReviewCreateDto reviewCreateDto);

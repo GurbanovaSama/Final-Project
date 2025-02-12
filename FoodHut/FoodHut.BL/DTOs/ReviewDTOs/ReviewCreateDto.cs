@@ -20,7 +20,7 @@ public class ReviewCreateDtoValidator : AbstractValidator<ReviewCreateDto>
             .NotEmpty().WithMessage("User ID cannot be empty!");
 
         RuleFor(x => x.UserName)
-            .NotEmpty().WithMessage("UsserName cannot be empty!")
+            .NotEmpty().WithMessage("UserName cannot be empty!")
             .MaximumLength(100).WithMessage("Username must not be longer than 100 characters.");
 
         RuleFor(x => x.UserRole)
