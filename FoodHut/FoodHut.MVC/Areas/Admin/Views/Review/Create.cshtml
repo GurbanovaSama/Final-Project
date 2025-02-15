@@ -14,6 +14,12 @@
     </div>
 
     <div class="mb-3">
+        <label class="form-label">User Role</label>
+        <input asp-for="UserRole" class="form-control" />
+        <span asp-validation-for="UserRole" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
         <label class="form-label">User Name</label>
         <input asp-for="UserName" class="form-control" />
         <span asp-validation-for="UserName" class="text-danger"></span>

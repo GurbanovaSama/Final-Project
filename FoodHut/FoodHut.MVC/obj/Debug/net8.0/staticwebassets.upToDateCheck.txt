@@ -2000,11 +2000,18 @@ wwwroot\assets\vendors\themify-icons\fonts\themify.ttf
 wwwroot\assets\vendors\themify-icons\fonts\themify.woff
 wwwroot\assets\vendors\wow\wow.js
 wwwroot\uploads\products\480b385b-dd14-44a0-9450-1c3889cbdbb4desserts3.jpg
+wwwroot\uploads\products\9d34afdd-2fe7-4db1-9881-35a636c99909download (1).jpg
 wwwroot\uploads\products\c21895f3-2d20-4371-828f-2598ff4ef67ddrinks3.jpg
 wwwroot\uploads\products\d39c9f64-4c6a-4074-afd9-92d14a13adf3drinks2.jpg
+wwwroot\uploads\products\f57563a2-01fd-4267-ac22-f24a71271370desserts3.jpg
+wwwroot\uploads\restaurant\26a458c0-bafc-41c8-aeb1-af91228d4f8drestauran img1.webp
+wwwroot\uploads\restaurant\2d7b4cf1-fceb-4ce3-9599-658ad382bfb4desserts1.jpg
 wwwroot\uploads\restaurant\928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp
+wwwroot\uploads\restaurant\ec99aa74-80ae-4c29-ac5f-9ea339a5fc90images.jpg
 wwwroot\uploads\restaurant\f17187ad-a8b1-471f-b874-56e6a31dba40928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp
+wwwroot\uploads\restaurants\0ac3daeb-5799-47f0-9e89-41cac680dae7download.jpg
 wwwroot\uploads\restaurants\46d5f72d-c9a3-47f3-a5ee-a9051e2aa9d0download.jpg
+wwwroot\uploads\restaurants\766c120a-60e7-4fde-ada7-98dfcd7900e6download.jpg
 wwwroot\uploads\restaurants\8b9e3b7a-a7f4-40bc-a1ec-461cda27d044images (1).jpg
 wwwroot\uploads\restaurants\9e7f093c-ffc4-445e-964f-9073a1396735images.jpg
 wwwroot\uploads\restaurants\f67bf0c7-0afa-4b16-921c-e34ea5fd5e0cimages.jpg
