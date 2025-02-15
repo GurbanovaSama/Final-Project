@@ -1999,6 +1999,9 @@ wwwroot\assets\vendors\themify-icons\fonts\themify.svg
 wwwroot\assets\vendors\themify-icons\fonts\themify.ttf
 wwwroot\assets\vendors\themify-icons\fonts\themify.woff
 wwwroot\assets\vendors\wow\wow.js
+wwwroot\uploads\products\480b385b-dd14-44a0-9450-1c3889cbdbb4desserts3.jpg
+wwwroot\uploads\products\c21895f3-2d20-4371-828f-2598ff4ef67ddrinks3.jpg
+wwwroot\uploads\products\d39c9f64-4c6a-4074-afd9-92d14a13adf3drinks2.jpg
 wwwroot\uploads\restaurant\928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp
 wwwroot\uploads\restaurant\f17187ad-a8b1-471f-b874-56e6a31dba40928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp
 wwwroot\uploads\restaurants\46d5f72d-c9a3-47f3-a5ee-a9051e2aa9d0download.jpg

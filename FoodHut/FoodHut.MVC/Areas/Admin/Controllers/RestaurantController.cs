@@ -3,12 +3,14 @@ using FoodHut.BL.Services.Abstractions;
 using FoodHut.BL.Services.Implementations;
 using FoodHut.BL.Utilities;
 using FoodHut.DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FoodHut.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class RestaurantController : Controller
     {
         private readonly IRestaurantService _service;

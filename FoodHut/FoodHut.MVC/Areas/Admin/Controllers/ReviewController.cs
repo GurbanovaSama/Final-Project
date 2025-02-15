@@ -1,11 +1,13 @@
 ﻿using FoodHut.BL.DTOs;
 using FoodHut.BL.Exceptions;
 using FoodHut.BL.Services.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodHut.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ReviewController : Controller
     {
         private readonly IReviewService _reviewService;

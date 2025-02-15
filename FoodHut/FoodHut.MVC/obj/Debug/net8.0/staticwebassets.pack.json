@@ -8005,6 +8005,18 @@
       "PackagePath": "staticwebassets\\assets\\vendors\\wow\\wow.js"
     },
     {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\products\\480b385b-dd14-44a0-9450-1c3889cbdbb4desserts3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\480b385b-dd14-44a0-9450-1c3889cbdbb4desserts3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\products\\c21895f3-2d20-4371-828f-2598ff4ef67ddrinks3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\c21895f3-2d20-4371-828f-2598ff4ef67ddrinks3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\products\\d39c9f64-4c6a-4074-afd9-92d14a13adf3drinks2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\d39c9f64-4c6a-4074-afd9-92d14a13adf3drinks2.jpg"
+    },
+    {
       "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurant\\928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp",
       "PackagePath": "staticwebassets\\uploads\\restaurant\\928b04ac-a7eb-4a8c-9dfa-fb94ba3d4cd4abu-dhabi-broadway-interior-seating.webp"
     },

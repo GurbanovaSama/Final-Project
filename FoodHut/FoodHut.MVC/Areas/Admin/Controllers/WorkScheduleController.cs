@@ -1,12 +1,14 @@
 ﻿using FoodHut.BL.DTOs;
 using FoodHut.BL.Services.Abstractions;
 using FoodHut.BL.Services.Implementations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FoodHut.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class WorkScheduleController : Controller
     {
         private readonly IWorkScheduleService _service;
