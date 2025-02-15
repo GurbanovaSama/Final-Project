@@ -29,7 +29,7 @@
                 <td>@restaurant.PhoneNumber</td>
                 <td>@restaurant.Email</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@restaurant.Id" class="btn btn-info">View</a>
+                    <a asp-action="Details" asp-route-id="@restaurant.Id" class="btn btn-info">Details</a>
                     <a asp-action="Update" asp-route-id="@restaurant.Id" class="btn btn-warning">Update</a>
                     <form asp-action="Delete" asp-route-id="@restaurant.Id" method="post" class="d-inline">
                         <button type="submit" class="btn btn-danger">Delete</button>

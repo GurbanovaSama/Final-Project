@@ -13,6 +13,8 @@ public record ProductUpdateDto
     public string ImageUrl { get; set; }        
     public IFormFile? Image { get; set; }
     public int CategoryId { get; set; }
+    public int RestaurantId { get; set; }
+
 }
 
 public class ProductUpdateDtoValidation : AbstractValidator<ProductUpdateDto>
@@ -43,5 +45,9 @@ public class ProductUpdateDtoValidation : AbstractValidator<ProductUpdateDto>
 
         RuleFor(e => e.CategoryId)
             .GreaterThan(0).WithMessage("Category id must be a natural number!");
+
+        RuleFor(e => e.RestaurantId)
+         .NotEmpty().WithMessage("Restaurant id cannot be empty!")
+         .GreaterThan(0).WithMessage("Restaurant id must be a natural number!");
     }
 }

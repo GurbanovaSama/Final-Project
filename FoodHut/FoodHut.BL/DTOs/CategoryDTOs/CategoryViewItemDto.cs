@@ -3,5 +3,5 @@
 public record CategoryViewItemDto
 {
     public string Name { get; set; }
-    public int RestaurantId { get; set; }
+    public int Id { get; set; }
 }

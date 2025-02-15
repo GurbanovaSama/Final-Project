@@ -121,22 +121,21 @@
     </div>
 </div>
 
+@if (Model.Categories.Count > 0)
+            {
 <!-- BLOG Section  -->
 <div id="blog" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
     <h2 class="section-title py-5">EVENTS AT THE FOOD HUT</h2>
     <div class="row justify-content-center">
         <div class="col-sm-7 col-md-4 mb-5">
-            @if (Model.Categories.Count > 0)
-            {
                 <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
                     @foreach (CategoryViewItemDto category in Model.Categories)
                     {
                         <li class="nav-item">
-                            <a class="nav-link category-btn" data-category="@category.RestaurantId" role="tab">@category.Name</a>
+                            <a class="nav-link category-btn" data-category="@category.Id" role="tab">@category.Name</a>
                         </li>
                     }
                 </ul>
-            }
         </div>
     </div>
 
@@ -158,7 +157,7 @@
         </div>
     </div>
 </div>
-
+}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const buttons = document.querySelectorAll(".category-btn");
