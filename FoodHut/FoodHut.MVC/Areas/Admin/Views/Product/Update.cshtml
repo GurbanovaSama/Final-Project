@@ -1,4 +1,5 @@
-﻿@model ProductUpdateDto
+﻿
+@model ProductUpdateDto;
 @{
     SelectList categories = (ViewData["Categories"] as SelectList) ?? new SelectList(new List<string>());
     SelectList restaurants = (ViewData["Restaurants"] as SelectList) ?? new SelectList(new List<string>());

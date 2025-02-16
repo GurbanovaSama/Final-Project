@@ -13,4 +13,5 @@ public interface IProductService
     Task UpdateAsync(ProductUpdateDto dto);
     Task DeleteAsync(int id);
     Task<int> SaveChangesAsync();
+    Task<ICollection<GetProductDto>> GetProductsByCategoryIdAsync(int categoryId);   
 }

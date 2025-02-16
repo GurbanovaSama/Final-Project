@@ -122,83 +122,59 @@
 </div>
 
 @if (Model.Categories.Count > 0)
-            {
-<!-- BLOG Section  -->
-<div id="blog" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
-    <h2 class="section-title py-5">EVENTS AT THE FOOD HUT</h2>
-    <div class="row justify-content-center">
-        <div class="col-sm-7 col-md-4 mb-5">
+{
+    <!-- BLOG Section  -->
+    <div id="blog" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
+        <h2 class="section-title py-5">EVENTS AT THE FOOD HUT</h2>
+        <div class="row justify-content-center">
+            <div class="col-sm-7 col-md-4 mb-5">
                 <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
                     @foreach (CategoryViewItemDto category in Model.Categories)
                     {
                         <li class="nav-item">
-                            <a class="nav-link category-btn" data-category="@category.Id" role="tab">@category.Name</a>
+                            <button class="nav-link category-btn" data-category="@category.Id" role="tab" onclick="loadProducts(@category.Id)" style="background-color: #FF214F; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+                                @category.Name
+                            </button>
                         </li>
                     }
                 </ul>
+            </div>
         </div>
-    </div>
 
-    <div class="tab-content" id="products-container">
-        <div class="row">
-            @foreach (ProductViewItemDto product in Model.Products)
-            {
-                <div class="col-md-4 product-card">
-                    <div class="card bg-transparent border my-3 my-md-0">
-                        <img src="~/uploads/products/@product.ImageUrl" alt="Product Image" class="rounded-0 card-img-top img-responsive">
-                        <div class="card-body">
-                            <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">@product.Price</a></h1>
-                            <h4 class="pt20 pb20">@product.Name</h4>
-                            <p class="text-white">@product.Description</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="categories">
+            <!-- Bu hissəni AJAX vasitəsilə göstəririk, amma səhifə başlanğıcında göstərilə bilər -->
+        </div>
+
+        <!-- Məhsullar bu div-in içində göstəriləcək -->
+        <div id="products-container"></div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            function loadProducts(categoryId) {
+                $.ajax({
+                    url: "/Product/ProductsByCategory",
+                    type: "GET",
+                    data: { categoryId: categoryId },
+                    success: function (data) {
+                        $("#products-container").html(data); // Gələn HTML-i səhifəyə əlavə edirik
+                    },
+                    error: function () {
+                        alert("An error occurred while retrieving products!");
+                    }
+                });
             }
-        </div>
+        </script>
+
     </div>
-</div>
 }
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".category-btn");
-        const productsContainer = document.getElementById("products-container");
 
-        buttons.forEach(button => {
-            button.addEventListener("click", function () {
-                const categoryId = this.getAttribute("data-category");
 
-                buttons.forEach(btn => btn.classList.remove("active"));
-                this.classList.add("active");
 
-                fetch(`/Products/GetByCategory?categoryId=${categoryId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        productsContainer.innerHTML = '<div class="row"></div>';
-                        const rowDiv = productsContainer.querySelector(".row");
 
-                        data.forEach(product => {
-                            const productElement = document.createElement("div");
-                            productElement.classList.add("col-md-4", "product-card");
-                            productElement.innerHTML = `
-                                <div class="card bg-transparent border my-3 my-md-0">
-                                    <img src="/uploads/products/${product.imageUrl}" alt="Product Image" class="rounded-0 card-img-top img-responsive">
-                                    <div class="card-body">
-                                        <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">${product.price} AZN</a></h1>
-                                        <h4 class="pt20 pb20">${product.name}</h4>
-                                        <p class="text-white">${product.description}</p>
-                                    </div>
-                                </div>
-                            `;
-                            rowDiv.appendChild(productElement);
-                        });
 
-                        productsContainer.appendChild(rowDiv);
-                    })
-                    .catch(error => console.error("Error fetching products:", error));
-            });
-        });
-    });
-</script>
+
+
 
 
 <!-- REVIEWS Section  -->

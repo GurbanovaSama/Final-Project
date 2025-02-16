@@ -70,6 +70,14 @@ public class ProductService : IProductService
     }
 
 
-    public async Task<int> SaveChangesAsync()=> await _productRepository.SaveChangesAsync();    
+    public async Task<int> SaveChangesAsync()=> await _productRepository.SaveChangesAsync();
 
+    public async Task<ICollection<GetProductDto>> GetProductsByCategoryIdAsync(int categoryId)
+    {
+        ICollection<Product> products = await _productRepository.GetAllAsync(); 
+        ICollection<Product> filteredProducts = products.Where(p => p.CategoryId == categoryId).ToList();
+
+        ICollection<GetProductDto> productDtos = _mapper.Map<ICollection<GetProductDto>>(filteredProducts);
+        return productDtos;
+    }
 }

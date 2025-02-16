@@ -1,12 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FoodHut.BL.DTOs;
+using FoodHut.BL.Services.Abstractions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FoodHut.MVC.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        private readonly IProductService _productService;
+
+        public ProductController(IProductService productService)
         {
-            return View();
+            _productService = productService;
+        }
+
+        public async Task<IActionResult> ProductsByCategory(int categoryId)
+        {
+            ICollection<GetProductDto> products = await _productService.GetProductsByCategoryIdAsync(categoryId);
+            return PartialView("_ProductListPartial", products);
         }
     }
+    
 }

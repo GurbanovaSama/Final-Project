@@ -21,13 +21,13 @@ public class RestaurantCreateDtoValidation : AbstractValidator<RestaurantCreateD
     {
         RuleFor(x => x.Name)
             .NotEmpty().WithMessage("Name cannot be empty!")
-            .MinimumLength(10).WithMessage("Name must be at least 10 symbols long!")
+            .MinimumLength(2).WithMessage("Name must be at least 2 symbols long!")
             .MaximumLength(100).WithMessage("The length of the name cannot exceed 100 symbols!");
 
         RuleFor(x => x.Description)
             .NotEmpty().WithMessage("Description cannot be empty!")
             .MinimumLength(10).WithMessage("Description must be at least 10 symbols long!")
-            .MaximumLength(255).WithMessage("The length of the description cannot exceed 255 symbols!");
+            .MaximumLength(500).WithMessage("The length of the description cannot exceed 500 symbols!");
 
         RuleFor(x => x.Location)
            .NotEmpty().WithMessage("Location cannot be empty!")
