@@ -103,6 +103,50 @@ namespace FoodHut.DAL.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("FoodHut.DAL.Models.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("NumberOfGuests")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan>("Time")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reservations");
+                });
+
             modelBuilder.Entity("FoodHut.DAL.Models.Restaurant", b =>
                 {
                     b.Property<int>("Id")
@@ -372,13 +416,13 @@ namespace FoodHut.DAL.Migrations
                         {
                             Id = "abc63b97-f14a-4601-8dc6-9d0583e118cf",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f0017221-9bd8-40cb-9d5b-40b98de1a804",
+                            ConcurrencyStamp = "09ff5bf1-e786-4887-9ce2-76b1a933e91a",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEA0VqVyOA69S3jLfBOhy60W+UlBeBbxB3KLae98afTbV4wZRZc10GTc9l7ziKbNHg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELpinrJJYAE8i+YBaYX8esUNkRjk+dHWF6uJ8h2VytAZP7MN43ljNfYankf96djG+w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3bd7854d-28b5-4efb-be98-b0b69e4cdd52",
+                            SecurityStamp = "be161583-d3c1-465f-9e07-21da24bc3d26",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

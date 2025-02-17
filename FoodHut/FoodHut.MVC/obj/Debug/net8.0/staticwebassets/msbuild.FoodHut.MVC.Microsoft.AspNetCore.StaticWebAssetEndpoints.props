@@ -24072,6 +24072,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5Er7SAhJmwsmyIwCe7xWrtxIXyOeujprcPYiUScYWls="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"6606"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00225Er7SAhJmwsmyIwCe7xWrtxIXyOeujprcPYiUScYWls=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Feb 2025 11:25:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/products/34fb4c40-7061-4045-bcde-490443afe651download (5).jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\34fb4c40-7061-4045-bcde-490443afe651download (5).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-GOx6pwu\u002Bvmdaw7X1gS3zTPWvl9ApBlDskeh511u6ZuU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"18195"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GOx6pwu\u002Bvmdaw7X1gS3zTPWvl9ApBlDskeh511u6ZuU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 12:25:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/products/34fb4c40-7061-4045-bcde-490443afe651download (5).wecpxwm9jq.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\34fb4c40-7061-4045-bcde-490443afe651download (5).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wecpxwm9jq"},{"Name":"integrity","Value":"sha256-GOx6pwu\u002Bvmdaw7X1gS3zTPWvl9ApBlDskeh511u6ZuU="},{"Name":"label","Value":"_content/FoodHut.MVC/uploads/products/34fb4c40-7061-4045-bcde-490443afe651download (5).jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18195"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GOx6pwu\u002Bvmdaw7X1gS3zTPWvl9ApBlDskeh511u6ZuU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 12:25:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/products/3e9df800-4bb0-4dcc-a1e3-f5574aeebed7download (6).94e7e9zbww.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\products\3e9df800-4bb0-4dcc-a1e3-f5574aeebed7download (6).jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -24696,6 +24708,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7Ymb1UbMU88q3mq5RpDrYJWgvmxaWkFnh0YwPYBoRjg="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"16124"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00227Ymb1UbMU88q3mq5RpDrYJWgvmxaWkFnh0YwPYBoRjg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 16:14:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/restaurants/8e824b18-ebe1-40d6-94b2-cf6ec005b581download (8).jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\8e824b18-ebe1-40d6-94b2-cf6ec005b581download (8).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ew6QwlnzJPrOn6F9ZU9rmB8oKw3h45hGHKze2eTXLR4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"9571"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ew6QwlnzJPrOn6F9ZU9rmB8oKw3h45hGHKze2eTXLR4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 12:26:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/restaurants/8e824b18-ebe1-40d6-94b2-cf6ec005b581download (8).priy6mcf1i.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\8e824b18-ebe1-40d6-94b2-cf6ec005b581download (8).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"priy6mcf1i"},{"Name":"integrity","Value":"sha256-ew6QwlnzJPrOn6F9ZU9rmB8oKw3h45hGHKze2eTXLR4="},{"Name":"label","Value":"_content/FoodHut.MVC/uploads/restaurants/8e824b18-ebe1-40d6-94b2-cf6ec005b581download (8).jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9571"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ew6QwlnzJPrOn6F9ZU9rmB8oKw3h45hGHKze2eTXLR4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 12:26:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/restaurants/96b4077d-78d2-485f-a01f-1fbcb5ca9235download (1).jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\96b4077d-78d2-485f-a01f-1fbcb5ca9235download (1).jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -24791,6 +24815,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ry1aqhisn3"},{"Name":"integrity","Value":"sha256-jXlI9ANFue2oFvremyQu8xwVNqtnn4e7\u002BCKy47sJhBs="},{"Name":"label","Value":"_content/FoodHut.MVC/uploads/restaurants/e8ff5318-dabb-44ff-a97d-432f81c26594download (1).jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9837"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022jXlI9ANFue2oFvremyQu8xwVNqtnn4e7\u002BCKy47sJhBs=\u0022"},{"Name":"Last-Modified","Value":"Sat, 15 Feb 2025 16:52:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/restaurants/ebb1c672-79d7-4e31-8409-baf18bfa990cdownload (7).jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\ebb1c672-79d7-4e31-8409-baf18bfa990cdownload (7).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-IA5lJOJnagJKE5gytaFsGxomJyhDush/akqdV/wDUPA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14029"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022IA5lJOJnagJKE5gytaFsGxomJyhDush/akqdV/wDUPA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 12:26:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/restaurants/ebb1c672-79d7-4e31-8409-baf18bfa990cdownload (7).sxqf499c1g.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\ebb1c672-79d7-4e31-8409-baf18bfa990cdownload (7).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sxqf499c1g"},{"Name":"integrity","Value":"sha256-IA5lJOJnagJKE5gytaFsGxomJyhDush/akqdV/wDUPA="},{"Name":"label","Value":"_content/FoodHut.MVC/uploads/restaurants/ebb1c672-79d7-4e31-8409-baf18bfa990cdownload (7).jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14029"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022IA5lJOJnagJKE5gytaFsGxomJyhDush/akqdV/wDUPA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Feb 2025 12:26:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FoodHut.MVC/uploads/restaurants/edcad7cf-ff8e-4246-a766-d2b825eb8b7crestaurant4.iy8mpq631o.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\edcad7cf-ff8e-4246-a766-d2b825eb8b7crestaurant4.jpg'))</AssetFile>

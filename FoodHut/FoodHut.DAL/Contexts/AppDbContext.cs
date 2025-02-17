@@ -15,6 +15,7 @@ public class AppDbContext : IdentityDbContext<IdentityUser,IdentityRole,string>
     public DbSet<Category> Categories { get; set; }     
     public DbSet<Review> Reviews { get; set; }
     public DbSet<WorkSchedule> WorkSchedules { get; set; }
+    public DbSet<Reservation> Reservations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

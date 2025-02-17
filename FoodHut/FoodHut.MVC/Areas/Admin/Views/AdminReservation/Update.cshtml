@@ -1,0 +1,36 @@
+﻿@model ReservationDto
+
+@{
+    ViewData["Title"] = "Update Reservation";
+}
+
+<h2>Update Reservation</h2>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" type="email" required />
+    </div>
+
+    <div class="form-group">
+        <label>Phone</label>
+        <input asp-for="PhoneNumber" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Number of Guests</label>
+        <input asp-for="NumberOfGuests" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input asp-for="Date" class="form-control" type="datetime-local" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

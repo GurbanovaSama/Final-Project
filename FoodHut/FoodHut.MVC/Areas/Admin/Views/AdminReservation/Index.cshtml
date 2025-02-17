@@ -1,0 +1,46 @@
+﻿@model ICollection<ReservationDto>
+
+@{
+    ViewData["Title"] = "Reservations";
+}
+
+<h2>Reservations</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No reservations found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Number of Guests</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ReservationDto reservation in Model)
+            {
+                <tr>
+                    <td>@reservation.Id</td>
+                    <td>@reservation.Name</td>
+                    <td>@reservation.Email</td>
+                    <td>@reservation.PhoneNumber</td>
+                    <td>@reservation.NumberOfGuests</td>
+                    <td>@reservation.Date.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@reservation.Id" class="btn btn-warning">Update</a>
+                        <a asp-action="Delete" asp-route-id="@reservation.Id" class="btn btn-danger">Delete</a>
+                        <a class="btn btn-info" asp-controller="AdminReservation" asp-action="Details" asp-route-id="@reservation.Id">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

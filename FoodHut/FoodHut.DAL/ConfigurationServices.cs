@@ -14,6 +14,7 @@ namespace FoodHut.DAL
             services.AddScoped<IRepository<Restaurant>, Repository<Restaurant>>();
             services.AddScoped<IRepository<Review>, Repository<Review>>();
             services.AddScoped<IRepository<WorkSchedule>, Repository<WorkSchedule>>();
+            services.AddScoped<IRepository<Reservation>, Repository<Reservation>>();
         }
     }
 }

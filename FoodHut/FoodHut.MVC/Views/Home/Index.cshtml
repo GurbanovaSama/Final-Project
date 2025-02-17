@@ -117,7 +117,7 @@
                 <input type="date" id="booktable" class="form-control form-control-lg custom-form-control" placeholder="12/12/12">
             </div>
         </div>
-        <a href="#" class="btn btn-lg btn-primary" id="rounded-btn">FIND TABLE</a>
+        <a  class="btn btn-lg btn-primary" id="rounded-btn"  asp-controller="Reservation" asp-action="Create">FIND TABLE</a>
     </div>
 </div>
 
@@ -183,14 +183,14 @@
 
         <input type="hidden" name="RestaurantId" value="1">
 
-        <button type="submit" class="btn btn-primary mt-2" style="width: 100%; padding: 12px; background-color: #FF214F; border: none; color: white; font-size: 16px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+        <button  type="submit" class="btn btn-primary mt-2" style="width: 100%; padding: 12px; background-color: #FF214F; border: none; color: white; font-size: 16px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
             Submit Review
         </button>
     </form>
 
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success mt-2" style="text-align: center; background-color: #28a745; color: white; padding: 10px; border-radius: 4px;">
+        <div class="alert alert-success mt-2" style="text-align: center; background-color: #28a745; color: white; padding: 10px; border-radius: 4px;" >
             @TempData["SuccessMessage"]
         </div>
     }
