@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodHut.MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ffcccb73317a6a7328282daf6b1d5f67a71bb76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e8990e493adc1b131893887d8a7df030395736e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodHut.MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodHut.MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

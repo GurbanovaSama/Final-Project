@@ -170,6 +170,38 @@
 }
 
 
+@if (User.Identity.IsAuthenticated)
+{
+    <form asp-area="Admin" asp-action="Index" asp-controller="Review" method="post" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; margin-bottom: 20px; color: #333;">Write a Review</h3>
+
+        <label style="font-weight: bold; color: #333;">Rating (1-5):</label>
+        <input type="number" name="Rating" min="1" max="5" required class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px;">
+
+        <label style="font-weight: bold; color: #333;">Your Review:</label>
+        <textarea name="Comment" required class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px; height: 150px;"></textarea>
+
+        <input type="hidden" name="RestaurantId" value="1">
+
+        <button type="submit" class="btn btn-primary mt-2" style="width: 100%; padding: 12px; background-color: #FF214F; border: none; color: white; font-size: 16px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+            Submit Review
+        </button>
+    </form>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success mt-2" style="text-align: center; background-color: #28a745; color: white; padding: 10px; border-radius: 4px;">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+}
+else
+{
+    <p style="text-align: center; color: #fff; font-size: 16px;">
+        You must be logged in to write a review.
+        <a asp-area="Admin" asp-action="Login" asp-controller="Account" style="color: #FF214F; font-weight: bold;">Login here</a>
+    </p>
+}
 
 
 
@@ -177,22 +209,21 @@
 
 
 
-<!-- REVIEWS Section  -->
 <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
     <h2 class="section-title my-5 text-center">REVIEWS</h2>
     <div class="row mt-3 mb-5">
-        @foreach(ReviewViewItemDto review in Model.Reviews) 
+        @foreach (ReviewViewItemDto review in Model.Reviews)
         {
-        <div class="col-md-4 my-3 my-md-0">
-            <div class="testmonial-card">
-                <h3 class="testmonial-title">@review.Name</h3>
-                <h6 class="testmonial-subtitle">@review.Position</h6>
-                    <h3 class="testmonial-title">@review.Rating</h3>
-                <div class="testmonial-body">
-                    <p>@review.Comment</p>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <div>
+                        <strong>⭐ @review.Rating</strong>
+                    </div>
+                    <div class="testmonial-body">
+                        <p>@review.Comment</p>
+                    </div>
                 </div>
             </div>
-        </div>
         }
     </div>
 </div>
