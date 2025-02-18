@@ -8,6 +8,24 @@
 
 <form asp-action="Create" method="post">
     <div class="mb-3">
+        <label class="form-label">User ID</label>
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">User Role</label>
+        <input asp-for="UserRole" class="form-control" />
+        <span asp-validation-for="UserRole" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">User Name</label>
+        <input asp-for="UserName" class="form-control" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
         <label class="form-label">Comment</label>
         <textarea asp-for="Comment" class="form-control"></textarea>
         <span asp-validation-for="Comment" class="text-danger"></span>
