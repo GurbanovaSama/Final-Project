@@ -8,6 +8,7 @@ public class ReviewProfile : Profile
 {
     public ReviewProfile()
     {
+        CreateMap<UserCreateDto, Review>().ReverseMap();
         CreateMap<ReviewCreateDto, Review>().ReverseMap();
         CreateMap<ReviewUpdateDto, Review>().ReverseMap();
         CreateMap<ReviewListItemDto, Review>().ReverseMap();

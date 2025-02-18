@@ -4,13 +4,13 @@
 
 @if (Model != null && Model.Any())
 {
-    <div class="row">
+    <div class="row px-5 mt-4">
         @foreach (GetProductDto product in Model)
         {
-            <div class="col-md-4">
-                <div class="card mb-3">
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card" style="border-radius: 10px; height:100%;">
                     <img src="~/uploads/products/@product.ImageUrl" class="card-img-top" alt="@product.Name" width="300" height="300">
-                    <div class="card-body" style="background-color: #808080; color: darkred;">
+                    <div class="card-body" style="background-color: #808080;">
                         <h5 class="card-title">@product.Name</h5>
                         <p class="card-text">@product.Description</p>
                         <p><strong>Price:</strong> @product.Price</p>

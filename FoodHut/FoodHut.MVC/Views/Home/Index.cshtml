@@ -172,7 +172,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <form asp-area="Admin" asp-action="Index" asp-controller="Review" method="post" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <form asp-action="Create" asp-controller="Review" method="post" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <h3 style="text-align: center; margin-bottom: 20px; color: #333;">Write a Review</h3>
 
         <label style="font-weight: bold; color: #333;">Rating (1-5):</label>

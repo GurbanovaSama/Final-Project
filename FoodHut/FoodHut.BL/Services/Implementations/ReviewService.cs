@@ -26,7 +26,6 @@ public class ReviewService : IReviewService
         return reviewDtos;
     }
 
-
     public async Task<ReviewViewItemDto?> GetByIdAsync(int id)
     {
         Review? review = await _reviewRepository.GetByIdAsync(id);
@@ -42,6 +41,16 @@ public class ReviewService : IReviewService
     public async Task CreateAsync(ReviewCreateDto reviewCreateDto)
     {
         Review review = _mapper.Map<Review>(reviewCreateDto);
+        await _reviewRepository.CreateAsync(review);
+    }
+
+    public async Task UserCreateAsync(UserCreateDto userCreateDto, string UserId, string UserRole, string UserName)
+    {
+        Review review = _mapper.Map<Review>(userCreateDto);
+        review.UserName = UserName;
+        review.UserId = UserId;
+        review.UserRole = UserRole;
+        review.RestaurantId = 1;
         await _reviewRepository.CreateAsync(review);
     }
 
