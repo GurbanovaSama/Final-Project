@@ -169,11 +169,28 @@
     </div>
 }
 
+<!-- Review Section  -->
 
 @if (User.Identity.IsAuthenticated)
 {
     <form asp-action="Create" asp-controller="Review" method="post" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <h3 style="text-align: center; margin-bottom: 20px; color: #333;">Write a Review</h3>
+
+        <label style="font-weight: bold; color: #333;">Select Restaurant:</label>
+        @if (ViewData["Restaurants"] != null)
+        {
+            <select name="RestaurantId" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px;">
+                <option value="">-- Select a Restaurant --</option>
+                @foreach (var restaurant in (IEnumerable<SelectListItem>)ViewData["Restaurants"])
+                {
+                    <option value="@restaurant.Value">@restaurant.Text</option>
+                }
+            </select>
+        }
+        else
+        {
+            <p style="color: red;">No restaurants available.</p>
+        }
 
         <label style="font-weight: bold; color: #333;">Rating (1-5):</label>
         <input type="number" name="Rating" min="1" max="5" required class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px;">
@@ -181,16 +198,14 @@
         <label style="font-weight: bold; color: #333;">Your Review:</label>
         <textarea name="Comment" required class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px; height: 150px;"></textarea>
 
-        <input type="hidden" name="RestaurantId" value="1">
-
-        <button  type="submit" class="btn btn-primary mt-2" style="width: 100%; padding: 12px; background-color: #FF214F; border: none; color: white; font-size: 16px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+        <button type="submit" class="btn btn-primary mt-2" style="width: 100%; padding: 12px; background-color: #FF214F; border: none; color: white; font-size: 16px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
             Submit Review
         </button>
     </form>
 
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success mt-2" style="text-align: center; background-color: #28a745; color: white; padding: 10px; border-radius: 4px;" >
+        <div class="alert alert-success mt-2" style="text-align: center; background-color: #28a745; color: white; padding: 10px; border-radius: 4px;">
             @TempData["SuccessMessage"]
         </div>
     }
@@ -203,30 +218,33 @@ else
     </p>
 }
 
-
-
-
-
-
-
 <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
     <h2 class="section-title my-5 text-center">REVIEWS</h2>
     <div class="row mt-3 mb-5">
-        @foreach (ReviewViewItemDto review in Model.Reviews)
+        @if (Model.Reviews != null && Model.Reviews.Any())
         {
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <div>
-                        <strong>⭐ @review.Rating</strong>
-                    </div>
-                    <div class="testmonial-body">
-                        <p>@review.Comment</p>
+            @foreach (ReviewViewItemDto review in Model.Reviews)
+            {
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <div>
+                            <strong>⭐ @review.Rating</strong>
+                        </div>
+                        <div class="testmonial-body">
+                            <p>@review.Comment</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+        }
+        else
+        {
+            <p style="text-align: center; color: white;">No reviews available.</p>
         }
     </div>
 </div>
+
+
 
 <!-- CONTACT Section  -->
 <div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">

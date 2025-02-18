@@ -21,13 +21,13 @@ public class ProductCreateDtoValidation : AbstractValidator<ProductCreateDto>
     {
         RuleFor(e => e.Name)
             .NotEmpty().WithMessage("Name cannot be empty!")
-            .MinimumLength(10).WithMessage("Name must be at least 10 symbols long!")
+            .MinimumLength(2).WithMessage("Name must be at least 2 symbols long!")
             .MaximumLength(100).WithMessage("The length of the name cannot exceed 100 symbols!");
 
         RuleFor(e => e.Description)
             .NotEmpty().WithMessage("Description cannot be empty!")
-            .MinimumLength(10).WithMessage("Description must be at least 10 symbols long!")
-            .MaximumLength(255).WithMessage("The length of the description cannot exceed 255 symbols!");
+            .MinimumLength(2).WithMessage("Description must be at least 2 symbols long!")
+            .MaximumLength(1000).WithMessage("The length of the description cannot exceed 1000 symbols!");
 
         RuleFor(e => e.Price)
             .NotEmpty().WithMessage("Price cannot be empty!")

@@ -6,6 +6,8 @@ public record UserCreateDto
 {
     public string Comment { get; set; }
     public double Rating { get; set; }
+    public int RestaurantId { get; set; }
+
 }
 
 public class UserCreateDtoValidator : AbstractValidator<UserCreateDto>
@@ -20,6 +22,8 @@ public class UserCreateDtoValidator : AbstractValidator<UserCreateDto>
         RuleFor(x => x.Rating)
             .InclusiveBetween(1, 5).WithMessage("Rating must be between 1 and 5.");
 
+        RuleFor(x => x.RestaurantId)
+         .GreaterThan(0).WithMessage("Restaurant ID must be greater than 0.");
 
     }
 }

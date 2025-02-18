@@ -31,8 +31,8 @@ public class ProductUpdateDtoValidation : AbstractValidator<ProductUpdateDto>
 
         RuleFor(e => e.Description)
             .NotEmpty().WithMessage("Description cannot be empty!")
-            .MinimumLength(10).WithMessage("Description must be at least 10 symbols long!")
-            .MaximumLength(500).WithMessage("The length of the description cannot exceed 500 symbols!");
+            .MinimumLength(2).WithMessage("Description must be at least 10 symbols long!")
+            .MaximumLength(1000).WithMessage("The length of the description cannot exceed 1000 symbols!");
 
         RuleFor(e => e.Price)
             .NotEmpty().WithMessage("Price cannot be empty!")

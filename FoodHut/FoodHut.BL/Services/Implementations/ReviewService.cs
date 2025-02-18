@@ -50,7 +50,7 @@ public class ReviewService : IReviewService
         review.UserName = UserName;
         review.UserId = UserId;
         review.UserRole = UserRole;
-        review.RestaurantId = 1;
+        //review.RestaurantId = 1;
         await _reviewRepository.CreateAsync(review);
     }
 
