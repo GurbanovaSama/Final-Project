@@ -26,76 +26,41 @@
 </div>
 <div class="gallary row">
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img src="~/assets/imgs/gallary-1.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
+        <img src="~/assets/imgs/gallary-1.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">       
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
-        <img src="~/assets/imgs/gallary-2.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
+        <img src="~/assets/imgs/gallary-2.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">  
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-3.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-4.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
+        <a href="#" class="gallary-overlay"></a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-5.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-6.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-7.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-8.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-9.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-10.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-11.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
     <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
         <img src="~/assets/imgs/gallary-12.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
-        <a href="#" class="gallary-overlay">
-            <i class="gallary-icon ti-plus"></i>
-        </a>
     </div>
 </div>
 
@@ -120,6 +85,8 @@
         <a  class="btn btn-lg btn-primary" id="rounded-btn"  asp-controller="Reservation" asp-action="Create">FIND TABLE</a>
     </div>
 </div>
+
+
 
 @if (Model.Categories.Count > 0)
 {
@@ -164,22 +131,31 @@
                     }
                 });
             }
-        </script>
 
+            // Səhifə yükləndikdə avtomatik olaraq "Foods" category'sinin məhsullarını yükləyirik
+            $(document).ready(function () {
+                var foodsCategory = @Model.Categories.FirstOrDefault(c => c.Name == "Foods")?.Id;
+                if (foodsCategory) {
+                    loadProducts(foodsCategory);
+                }
+            });
+        </script>
     </div>
 }
+
+
 
 <!-- Review Section  -->
 
 @if (User.Identity.IsAuthenticated)
 {
-    <form asp-action="Create" asp-controller="Review" method="post" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h3 style="text-align: center; margin-bottom: 20px; color: #333;">Write a Review</h3>
+    <form asp-action="Create" asp-controller="Review" method="post" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #3a3a3a; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; margin-bottom: 20px; color: #fff;">Write a Review</h3>
 
-        <label style="font-weight: bold; color: #333;">Select Restaurant:</label>
+        <label style="font-weight: bold; color: #fff;">Select Restaurant:</label>
         @if (ViewData["Restaurants"] != null)
         {
-            <select name="RestaurantId" class="form-control" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px;">
+            <select name="RestaurantId" class="form-control" required style="width: 100%; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px; background-color: #d3d3d3; color: black; font-weight: bold;">
                 <option value="">-- Select a Restaurant --</option>
                 @foreach (var restaurant in (IEnumerable<SelectListItem>)ViewData["Restaurants"])
                 {
@@ -192,11 +168,11 @@
             <p style="color: red;">No restaurants available.</p>
         }
 
-        <label style="font-weight: bold; color: #333;">Rating (1-5):</label>
-        <input type="number" name="Rating" min="1" max="5" required class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px;">
+        <label style="font-weight: bold; color: #fff;">Rating (1-5):</label>
+        <input type="number" name="Rating" min="1" max="5" required class="form-control" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px; background-color: #d3d3d3; color: black; font-weight: bold;">
 
-        <label style="font-weight: bold; color: #333;">Your Review:</label>
-        <textarea name="Comment" required class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px; height: 150px;"></textarea>
+        <label style="font-weight: bold; color: #fff;">Your Review:</label>
+        <textarea name="Comment" required class="form-control" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 15px; height: 150px; background-color: #d3d3d3; color: black; font-weight: bold;"></textarea>
 
         <button type="submit" class="btn btn-primary mt-2" style="width: 100%; padding: 12px; background-color: #FF214F; border: none; color: white; font-size: 16px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
             Submit Review
@@ -243,6 +219,8 @@ else
         }
     </div>
 </div>
+
+
 
 
 
