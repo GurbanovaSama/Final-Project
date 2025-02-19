@@ -8369,6 +8369,10 @@
       "PackagePath": "staticwebassets\\uploads\\restaurants\\1cad5dab-b2a3-45f9-aa7a-e9f0ff838b6edownload (32).jpg"
     },
     {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurants\\2465f3b3-a4c9-43e5-850a-29329d13a537images (8).jpg",
+      "PackagePath": "staticwebassets\\uploads\\restaurants\\2465f3b3-a4c9-43e5-850a-29329d13a537images (8).jpg"
+    },
+    {
       "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurants\\3fe1636a-8a78-4140-9e2a-000aa0c14d05images (6).jpg",
       "PackagePath": "staticwebassets\\uploads\\restaurants\\3fe1636a-8a78-4140-9e2a-000aa0c14d05images (6).jpg"
     },
@@ -8475,6 +8479,10 @@
     {
       "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurants\\f67bf0c7-0afa-4b16-921c-e34ea5fd5e0cimages.jpg",
       "PackagePath": "staticwebassets\\uploads\\restaurants\\f67bf0c7-0afa-4b16-921c-e34ea5fd5e0cimages.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\wwwroot\\uploads\\restaurants\\fd4066dd-c3b3-4bc9-bd81-ca70405851c5images (7).jpg",
+      "PackagePath": "staticwebassets\\uploads\\restaurants\\fd4066dd-c3b3-4bc9-bd81-ca70405851c5images (7).jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FoodHut.MVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

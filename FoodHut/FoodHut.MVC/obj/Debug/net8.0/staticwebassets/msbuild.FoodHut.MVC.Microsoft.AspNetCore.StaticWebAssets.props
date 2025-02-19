@@ -37656,6 +37656,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\1cad5dab-b2a3-45f9-aa7a-e9f0ff838b6edownload (32).jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\2465f3b3-a4c9-43e5-850a-29329d13a537images (8).jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>FoodHut.MVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FoodHut.MVC</BasePath>
+      <RelativePath>uploads/restaurants/2465f3b3-a4c9-43e5-850a-29329d13a537images (8).jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ihz804vv0p</Fingerprint>
+      <Integrity>pqVhFriCeOpMLmd3dTi/TQIK/BcpoMQcLcgLMl0lJtU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\2465f3b3-a4c9-43e5-850a-29329d13a537images (8).jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\3fe1636a-8a78-4140-9e2a-000aa0c14d05images (6).jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>FoodHut.MVC</SourceId>
@@ -38141,6 +38159,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\f67bf0c7-0afa-4b16-921c-e34ea5fd5e0cimages.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\fd4066dd-c3b3-4bc9-bd81-ca70405851c5images (7).jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>FoodHut.MVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FoodHut.MVC</BasePath>
+      <RelativePath>uploads/restaurants/fd4066dd-c3b3-4bc9-bd81-ca70405851c5images (7).jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6ja75arqlx</Fingerprint>
+      <Integrity>Eu7BaRodfDxue2bXhFNvCBUeoQAbfx1DamimgnXuJ7U=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\restaurants\fd4066dd-c3b3-4bc9-bd81-ca70405851c5images (7).jpg'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
