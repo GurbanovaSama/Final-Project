@@ -4,13 +4,17 @@
     ViewData["Title"] = "Review Details";
 }
 
-<h2>Review Details</h2>
+<div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center;">
+    <h2>Review Details</h2>
 
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">@Model.Name</h5>
-        <p class="card-text"><strong>Comment:</strong> @Model.Comment</p>
-        <p class="card-text"><strong>Rating:</strong> @Model.Rating</p>
-        <a asp-controller="Review" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <div style="padding: 15px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+        <h5 style="font-size: 1.5rem; margin-bottom: 10px;">@Model.Name</h5>
+        <p><strong>Comment:</strong> @Model.Comment</p>
+        <p><strong>Rating:</strong> @Model.Rating</p>
+
+        <a asp-controller="Review" asp-action="Index"
+           style="display: inline-block; padding: 10px 20px; font-size: 16px; text-decoration: none; background-color: #6c757d; color: white; border-radius: 5px;">
+            Back to List
+        </a>
     </div>
 </div>

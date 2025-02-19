@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\workschedule\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\workschedule\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\review\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\review\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\restaurant\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\restaurant\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E0C97B3-66A7-4238-8FB1-5D65564F5DD1}|FoodHut.BL\\FoodHut.BL.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.bl\\dtos\\reviewdtos\\usercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E0C97B3-66A7-4238-8FB1-5D65564F5DD1}|FoodHut.BL\\FoodHut.BL.csproj|solutionrelative:foodhut.bl\\dtos\\reviewdtos\\usercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\adminreservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\adminreservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|c:\\users\\sema gurbanova\\desktop\\final-project\\foodhut\\foodhut.mvc\\areas\\admin\\views\\adminreservation\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54A49C95-404F-42F3-B5DC-9E533A1109DB}|FoodHut.MVC\\FoodHut.MVC.csproj|solutionrelative:foodhut.mvc\\areas\\admin\\views\\adminreservation\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,63 +51,93 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "FoodHut.MVC\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "FoodHut.MVC\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T20:19:17.753Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\WorkSchedule\\Index.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\WorkSchedule\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\WorkSchedule\\Index.cshtml",
+              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\WorkSchedule\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T13:26:00.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Review\\Index.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\Review\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Review\\Index.cshtml",
+              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\Review\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T13:25:53.687Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "FoodHut.MVC\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "FoodHut.MVC\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAAALkAAABPAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Restaurant\\Index.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\Restaurant\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Restaurant\\Index.cshtml",
+              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\Restaurant\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-18T18:54:35.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "FoodHut.MVC\\Controllers\\ReviewController.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "FoodHut.MVC\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwCUAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T18:51:25.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.BL\\DTOs\\ReviewDTOs\\UserCreateDto.cs",
-              "RelativeDocumentMoniker": "FoodHut.BL\\DTOs\\ReviewDTOs\\UserCreateDto.cs",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.BL\\DTOs\\ReviewDTOs\\UserCreateDto.cs",
-              "RelativeToolTip": "FoodHut.BL\\DTOs\\ReviewDTOs\\UserCreateDto.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T18:40:38.36Z"
+              "WhenOpened": "2025-02-19T13:25:47.815Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Create.cshtml",
-              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Create.cshtml",
-              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABoAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-18T18:22:19.919Z"
+              "WhenOpened": "2025-02-19T13:25:40.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T13:25:28.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Index.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Index.cshtml",
+              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T13:25:10.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Details.cshtml",
+              "RelativeDocumentMoniker": "FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Sema Gurbanova\\Desktop\\Final-Project\\FoodHut\\FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Details.cshtml",
+              "RelativeToolTip": "FoodHut.MVC\\Areas\\Admin\\Views\\AdminReservation\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T13:23:22.417Z",
+              "EditorCaption": ""
             }
           ]
         },

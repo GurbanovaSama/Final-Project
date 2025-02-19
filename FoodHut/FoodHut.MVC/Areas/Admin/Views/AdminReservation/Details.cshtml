@@ -4,16 +4,20 @@
     ViewData["Title"] = "Reservation Details";
 }
 
-<h2>Reservation Details</h2>
+<div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center;">
+    <h2>Reservation Details</h2>
 
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">Reservation ID: @Model.Id</h5>
-        <h5 class="card-title">Name: @Model.Name</h5>
-        <p class="card-text"><strong>Email:</strong> <a href="mailto:@Model.Email">@Model.Email</a></p>
-        <p class="card-text"><strong>Number of Guests:</strong> @Model.NumberOfGuests</p>
-        <p class="card-text"><strong>Phone Number:</strong> <a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></p>
-        <p class="card-text"><strong>Reservation Date:</strong> @Model.Date</p>
-        <a asp-controller="AdminReservation" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <div style="padding: 15px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+        <h5>Reservation ID: @Model.Id</h5>
+        <h5>Name: @Model.Name</h5>
+        <p><strong>Email:</strong> <a href="mailto:@Model.Email">@Model.Email</a></p>
+        <p><strong>Number of Guests:</strong> @Model.NumberOfGuests</p>
+        <p><strong>Phone Number:</strong> <a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></p>
+        <p><strong>Reservation Date:</strong> @Model.Date</p>
+
+        <a asp-controller="AdminReservation" asp-action="Index"
+           style="display: inline-block; padding: 10px 20px; font-size: 16px; text-decoration: none; background-color: #6c757d; color: white; border-radius: 5px; margin-top: 10px;">
+            Back to List
+        </a>
     </div>
 </div>

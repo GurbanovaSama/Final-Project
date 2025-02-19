@@ -36,8 +36,8 @@ else
                     <td>@reservation.Date.ToString("yyyy-MM-dd")</td>
                     <td>
                         <a asp-action="Update" asp-route-id="@reservation.Id" class="btn btn-warning">Update</a>
-                        <a asp-action="Delete" asp-route-id="@reservation.Id" class="btn btn-danger">Delete</a>
                         <a class="btn btn-info" asp-controller="AdminReservation" asp-action="Details" asp-route-id="@reservation.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@reservation.Id" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             }
