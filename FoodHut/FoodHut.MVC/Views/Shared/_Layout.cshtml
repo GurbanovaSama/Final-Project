@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@inject ISettingService SettingService
+@{
+    SettingsDTO settings = await SettingService.GetSettingsAsync();
+}
+@model HomeVM;
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -93,15 +100,35 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h3>EMAIL US</h3>
-                    <P class="text-muted">info@website.com</P>
+                @if (settings.Email is not null && settings.Email != "")
+                {
+                    <div class="email">
+                        <i class="bx bx-envelope"></i>
+                        <p>@settings.Email</p>
+                    </div>
+                }
                 </div>
+
                 <div class="col-sm-4">
                     <h3>CALL US</h3>
-                    <P class="text-muted">(123) 456-7890</P>
+                @if (settings.Phone is not null && settings.Phone != "")
+                {
+                    <div class="phone">
+                        <i class="bx bx-phone-call"></i>
+                        <p>@settings.Phone</p>
+                    </div>
+                }
                 </div>
+
                 <div class="col-sm-4">
                     <h3>FIND US</h3>
-                    <P class="text-muted">12345 Fake ST NoWhere AB Country</P>
+                @if (settings.Address is not null && settings.Address != "")
+                {
+                    <div class="address">
+                        <i class="bx bx-map"></i>
+                        <p>@settings.Address</p>
+                    </div>
+                }
                 </div>
             </div>
         </div>
@@ -119,12 +146,35 @@
         <!-- wow.js -->
         <script src="~/assets/vendors/wow/wow.js"></script>
 
-        <!-- google maps -->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+        @* <!-- google maps --> *@
+        @* <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script> *@
 
         <!-- FoodHut js -->
         <script src="~/assets/js/foodhut.js"></script>
 
 </body>
 </html>
+<!-- Google Maps API integration -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"
+        async defer></script>
+
+<script>
+    let map;
+    function initMap() {
+        const mapOptions = {
+            center: { lat: 40.730610, lng: -73.935242 }, // Burada öz koordinatlarınızı daxil edin
+            zoom: 12, // Zoom səviyyəsini seçin
+            mapTypeId: 'roadmap' // Xəritənin növü
+        };
+
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        // Optional: Marker əlavə etmək
+        const marker = new google.maps.Marker({
+            position: { lat: 40.730610, lng: -73.935242 }, // Marker koordinatları
+            map: map,
+            title: "Your Location"
+        });
+    }
+</script>
 

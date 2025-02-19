@@ -1,0 +1,25 @@
+﻿@model SettingsDTO
+
+<form asp-action="Index" class="container" method="POST">
+    <h2 class="my-4">Settings</h2>
+    <div class="mb-3">
+        <input class="form-control" asp-for="Address" />
+        <span class="text-danger" asp-validation-for="Address"></span>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" asp-for="Email" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" asp-for="Phone" />
+        <span class="text-danger" asp-validation-for="Phone"></span>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" asp-for="GoogleMapApiKey" />
+        <span class="text-danger" asp-validation-for="GoogleMapApiKey"></span>
+    </div>
+
+    <p class="text-danger text-center">@Html.ValidationMessage("CustomError")</p>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

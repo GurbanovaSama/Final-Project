@@ -16,6 +16,7 @@ public class AppDbContext : IdentityDbContext<IdentityUser,IdentityRole,string>
     public DbSet<Review> Reviews { get; set; }
     public DbSet<WorkSchedule> WorkSchedules { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
+    public DbSet<Setting> Settings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -48,6 +49,22 @@ public class AppDbContext : IdentityDbContext<IdentityUser,IdentityRole,string>
         builder.Entity<IdentityUserRole<string>>().HasData(
             new IdentityUserRole<string> { UserId = admin.Id, RoleId = "e6eb5f0a-6258-48e9-8fce-cc2572049bf6" }
         );
+        #endregion
+
+
+        #region Settings
+        builder.Entity<Setting>(b =>
+        {
+            b.HasData(
+                new Setting
+                {
+                    Id = 1,
+                    Address = "12345 Fake ST NoWhere, AB Country",
+                    Phone = "(123) 456-7890",
+                    Email = "info@website.com",
+                    GoogleMapApiKey = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"
+                });
+        });
         #endregion
 
         base.OnModelCreating(builder);

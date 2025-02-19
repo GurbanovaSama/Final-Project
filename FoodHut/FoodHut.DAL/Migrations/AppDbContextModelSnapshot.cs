@@ -245,6 +245,55 @@ namespace FoodHut.DAL.Migrations
                     b.ToTable("Reviews");
                 });
 
+            modelBuilder.Entity("FoodHut.DAL.Models.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GoogleMapApiKey")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "12345 Fake ST NoWhere, AB Country",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "info@website.com",
+                            GoogleMapApiKey = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap",
+                            Phone = "(123) 456-7890"
+                        });
+                });
+
             modelBuilder.Entity("FoodHut.DAL.Models.WorkSchedule", b =>
                 {
                     b.Property<int>("Id")
@@ -416,13 +465,13 @@ namespace FoodHut.DAL.Migrations
                         {
                             Id = "abc63b97-f14a-4601-8dc6-9d0583e118cf",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "09ff5bf1-e786-4887-9ce2-76b1a933e91a",
+                            ConcurrencyStamp = "c219b37a-f215-4afb-bfdc-f93ea9da84de",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAELpinrJJYAE8i+YBaYX8esUNkRjk+dHWF6uJ8h2VytAZP7MN43ljNfYankf96djG+w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELkdm+GHuOtBPGcVNad0imm4g/5xgbEaFSrDnI5G5PRcbEV/c4e4oisG/0zGTjrMlQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "be161583-d3c1-465f-9e07-21da24bc3d26",
+                            SecurityStamp = "1f797a65-00e0-4466-87ec-cdcdf1711305",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

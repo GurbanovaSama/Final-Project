@@ -27,6 +27,8 @@ public static class ConfigurationServices
         services.AddScoped<IRestaurantService, RestaurantService>();
         services.AddScoped<IReviewService, ReviewService>();
         services.AddScoped<IReservationService, ReservationService>();
+        services.AddScoped<ISettingService, SettingService>();
+
 
     }
 }
