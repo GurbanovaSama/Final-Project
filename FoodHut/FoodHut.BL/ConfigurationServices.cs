@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using FoodHut.BL.DTOs;
 using FoodHut.BL.Services.Abstractions;
 using FoodHut.BL.Services.Implementations;
+using FoodHut.BL.Utilities;
 using FoodHut.DAL.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -28,6 +29,7 @@ public static class ConfigurationServices
         services.AddScoped<IReviewService, ReviewService>();
         services.AddScoped<IReservationService, ReservationService>();
         services.AddScoped<ISettingService, SettingService>();
+        services.AddScoped<EmailService, EmailService>();       
 
 
     }

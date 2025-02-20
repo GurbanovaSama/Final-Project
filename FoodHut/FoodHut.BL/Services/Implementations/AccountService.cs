@@ -37,8 +37,6 @@ public class AccountService : IAccountService
         if(!result.Succeeded) throw new BaseException();    
     }
 
-
-
     public async Task LoginAsync(UserLoginDTO dto)
     {
         IdentityUser user = await _userManager.FindByNameAsync(dto.UserName) ?? throw new BaseException("Credentials are wrong!");
